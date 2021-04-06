@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- v-if="showNav" -->
-    <SiteNav></SiteNav>
+    <SiteNav v-if="showNav"></SiteNav>
     <router-view/>
   </div>
 </template>

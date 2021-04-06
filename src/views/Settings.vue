@@ -74,6 +74,9 @@ export default {
 
   .button {
     margin-top: 2rem;
+    background: $error;
+    border-radius: 25px;
+    align-self: end;
   }
 }
 </style>

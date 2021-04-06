@@ -3,7 +3,7 @@
     <section>
       <div class="col1">
         <router-link to="/">
-          <h3>Vuegram</h3>
+          <h3>Tabtimize</h3>
         </router-link>
         <ul class="inline">
           <li>
