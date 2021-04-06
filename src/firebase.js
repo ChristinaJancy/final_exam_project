@@ -1,3 +1,7 @@
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+
 var firebaseConfig = {
     apiKey: "AIzaSyD_OBXdRcJ2j9AxXCrO5keR4yA9qvgjyxk",
     authDomain: "tabtimize.firebaseapp.com",
@@ -10,4 +14,19 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  // firebase.analytics();
+
+
+  // utils
+const db = firebase.firestore()
+const auth = firebase.auth()
+
+// collection references
+const usersCollection = db.collection('users')
+
+// export utils/refs
+export {
+  db,
+  auth,
+  usersCollection
+}
