@@ -4,9 +4,14 @@ import 'firebase/firestore'
 import * as fb from '../firebase'
 import router from '../router/index'
 import {usersCollection} from '../firebase.js'
+import pathify from 'vuex-pathify'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  plugins: [
+    pathify.plugin,
+  ],
+
   state: {
     currentUser: null,
     userProfile: {},
@@ -88,4 +93,6 @@ export default new Vuex.Store({
   },
   modules: {
   }
+
+  
 })

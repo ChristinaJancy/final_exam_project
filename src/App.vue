@@ -1,23 +1,28 @@
 <template>
-  <div id="app">
-    <!-- v-if="showNav" -->
+  <v-app id="app">
     <SiteNav v-if="showNav"></SiteNav>
-    <router-view/>
-  </div>
+    <v-main>
+      <router-view />
+    </v-main>
+    <Footer app v-if="showNav"></Footer>
+  </v-app>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import SiteNav from '@/components/SiteNav.vue'
+import { mapState } from "vuex";
+import SiteNav from "@/components/SiteNav.vue";
+import Footer from "@/components/Footer.vue";
+
 export default {
   components: {
-    SiteNav
+    SiteNav,
+    Footer,
   },
   computed: {
-    ...mapState(['userProfile']),
+    ...mapState(["userProfile"]),
     showNav() {
-      return Object.keys(this.userProfile).length > 1
-    }
-  }
-}
+      return Object.keys(this.userProfile).length > 1;
+    },
+  },
+};
 </script>
