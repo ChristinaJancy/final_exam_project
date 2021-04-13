@@ -98,13 +98,13 @@ export default {
         icon: "mdi-chat-alert-outline",
       },
     ],
-      data: vm => ({
-        initialDark: vm.$vuetify ? vm.$vuetify.theme.dark : false
-      }),
-      beforeDestroy() {
-        if (!this.$vuetify) return;
-        this.$vuetify.theme.dark = this.initialDark;
-      }
+      // data: vm => ({
+      //   initialDark: vm.$vuetify ? vm.$vuetify.theme.dark : false
+      // }),
+      // beforeDestroy() {
+      //   if (!this.$vuetify) return;
+      //   this.$vuetify.theme.dark = this.initialDark;
+      // }
   }),
   methods: {
     logout() {

@@ -1,7 +1,7 @@
 <template>
   <section id="settings">
     <div class="col1">
-      <h3>Settings</h3>
+      <h2>Settings</h2>
       <p>Update your profile</p>
 
       <transition name="fade">

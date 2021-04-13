@@ -1,6 +1,7 @@
 <template>
   <div>
-    <v-app-bar flat class="bg">
+
+    <v-app-bar flat class="background">
       <!-- <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon> -->
       <!-- <router-link to="/">
         <v-toolbar-title>Tabtimize</v-toolbar-title>
@@ -53,16 +54,17 @@
       permanent
       absolute
       app
+      class="secondary"
       style="z-index:10;"
     >
       <div align="end" class="px-2">
         <!-- <v-app-bar-nav-icon depressed class="navIcon transparent" @click.stop="mini = !mini">
         </v-app-bar-nav-icon>      -->
         <v-btn icon @click.stop="mini = !mini">
-          <v-icon v-if="!mini" color="grey darken-3">
+          <v-icon v-if="!mini" color="primary">
             mdi-chevron-left
           </v-icon>
-          <v-icon v-else color="grey darken-3">mdi-chevron-right </v-icon>
+          <v-icon v-else color="primary">mdi-chevron-right </v-icon>
         </v-btn>
       </div>
       <v-list-item class="px-2">
@@ -131,4 +133,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
