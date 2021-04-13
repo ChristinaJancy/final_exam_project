@@ -1,12 +1,17 @@
 <template>
   <div>
-    <v-app-bar flat class="transparent">
+    <v-app-bar flat class="bg">
       <!-- <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon> -->
       <!-- <router-link to="/">
         <v-toolbar-title>Tabtimize</v-toolbar-title>
       </router-link> -->
       <v-spacer></v-spacer>
-
+           <v-switch
+              v-model="$vuetify.theme.dark"
+              inset
+              color="light"
+              class="pt-8"
+            ></v-switch>
       <div class="text-center">
         <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on, attrs }">
@@ -14,7 +19,6 @@
               <v-img src="../assets/favicon.png" max-width="40px"></v-img>
             </v-btn>
           </template>
-
           <v-list>
             <a>
               <v-list-item>
@@ -62,7 +66,7 @@
         </v-btn>
       </div>
       <v-list-item class="px-2">
-        <v-list-item-avatar  tile>
+        <v-list-item-avatar tile>
           <v-img src="../assets/favicon.png"></v-img>
         </v-list-item-avatar>
 
@@ -88,7 +92,6 @@
           </v-list-item>
         </router-link>
 
-
         <router-link to="Settings">
           <v-list-item>
             <v-list-item-icon>
@@ -100,16 +103,6 @@
             </v-list-item-content>
           </v-list-item>
         </router-link>
-
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon></v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -138,42 +131,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-header {
-  position: relative;
-  background: $white;
-  box-shadow: 0 0 5px 0 rgba($dark, 0.5);
-  z-index: 10;
-
-  h3 {
-    display: inline-block;
-  }
-
-  ul {
-    float: right;
-    text-align: right;
-
-    li {
-      margin-top: 4px;
-      margin-left: 6px;
-
-      a {
-        display: block;
-        padding: 5px;
-      }
-    }
-  }
-
-  @media screen and (max-width: 742px) {
-    h3 {
-      display: block;
-      text-align: center;
-    }
-
-    ul {
-      float: none;
-      text-align: center;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

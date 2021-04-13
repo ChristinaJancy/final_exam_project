@@ -3,7 +3,7 @@
     <section>
       <div class="col1">
         <div class="profile">
-          <h5>{{ userProfile.name }}</h5>
+          <h2>{{ userProfile.name }}</h2>
           <p>{{ userProfile.title }}</p>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default {
   }
 
   .profile {
-    background: $white;
+    // background: $white;
     padding: 2rem;
 
     p {

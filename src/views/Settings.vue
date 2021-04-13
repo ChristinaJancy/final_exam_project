@@ -59,7 +59,7 @@ export default {
   .col1 {
     max-width: 600px;
     margin: 5vh auto 0;
-    background: $white;
+    // background: $white;
     padding: 2rem;
   }
 

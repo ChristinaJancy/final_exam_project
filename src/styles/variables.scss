@@ -1,34 +1,36 @@
 // imports
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 // colors
 $primary: #112243;
 $error: #fe3652;
 $success: #36b37e;
-$light: #F5F8FA;
+$light: #f5f8fa;
 $medium: #657786;
-$dark: #34495E;
+$dark: #34495e;
 $white: #fff;
 
 // resets
 body {
-	margin: 0;
-	color: $dark;
-	background: #E6ECF0;
+  margin: 0;
+  color: $dark;
+  background: #e6ecf0;
+  font-family: "Open Sans", sans-serif;
 }
 
 html {
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
+//   line-height: 1.15;
+//   -webkit-text-size-adjust: 100%;
+	font-size: 106.3%; /*17px*/
 }
 
 * {
-	font-family: 'Open Sans', sans-serif;
-	box-sizing: border-box;
-	transition: 0.15s;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  transition: 0.15s;
 
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 }
 
 // fonts
@@ -37,54 +39,118 @@ h2,
 h3,
 h4,
 h5,
-p {
-	margin: 0 0 0.5rem;
+h6 {
+  font-family: "Montserrat", sans-serif;
 }
-
 h1 {
-	font-size: 2rem;
+  size: 3.3125rem;
+  line-height: 1.15em;
+  font-weight: 300;
 }
-
 h2 {
-	font-size: 1.8rem;
+  size: 2.25rem;
+  line-height: 1.5em;
+  font-weight: 300;
 }
-
 h3 {
-	font-size: 1.6rem;
+  size: 1.5625rem;
+  line-height: 1.4em;
+  font-weight: 300;
 }
-
 h4 {
-	font-size: 1.4rem;
+  size: 1.125rem;
+  line-height: 1.4em;
+  font-weight: 300;
 }
-
 h5 {
-	font-size: 1.2rem;
+  size: 1.0625rem;
+  line-height: 1.4em;
+  font-weight: 300;
+}
+h6 {
+  size: 0.75rem;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.subtitle-1 {
+  size: 0.875rem;
+  font-weight: 300;
+}
+.subtitle-2 {
+  size: 0.875rem;
+  line-height: 1.5em !important;
+  font-weight: 300;
+}
+caption {
+  size: 0.8125rem;
+  font-weight: 300;
+}
+.overline {
+  letter-spacing: normal;
+  line-height: 0.625rem;
+  size: 0.625rem;
+  font-weight: 50;
 }
 
-p {
-	line-height: 1.5;
-}
+// Tabs
+$tab-font-size: 0.775rem;
+$tab-font-weight: 500;
+$tabs-item-letter-spacing: normal;
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// p {
+// 	margin: 0 0 0.5rem;
+// }
+
+// h1 {
+// 	font-size: 2rem;
+// }
+
+// h2 {
+// 	font-size: 1.8rem;
+// }
+
+// h3 {
+// 	font-size: 1.6rem;
+// }
+
+// h4 {
+// 	font-size: 1.4rem;
+// }
+
+// h5 {
+// 	font-size: 1.2rem;
+// }
+
+// p {
+// 	line-height: 1.5;
+// }
 
 a {
-	font-family: 'Open Sans', sans-serif;
-	text-decoration: none;
-	color: $primary;
-	margin: 0;
-	cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  color: $primary;
+  margin: 0;
+  cursor: pointer;
 
-	&:hover {
-		color: lighten($primary, 5%);
-	}
+  &:hover {
+    color: lighten($primary, 5%);
+  }
 }
 
 // globals
 section {
-	display: flex;
-	max-width: 1200px;
-	margin: 0 auto;
-	@media screen and (max-width: 742px) {
-		display: block;
-	}
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  @media screen and (max-width: 742px) {
+    display: block;
+  }
 }
 
 .col1,
@@ -95,125 +161,115 @@ section {
 	@media screen and (max-width: 742px) {}
 }
 
-[v-cloak] {
-	display: none;
-}
+// [v-cloak] {
+// 	display: none;
+// }
 
-.loading {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba($dark, 0.4);
-	z-index: 9999;
+// .loading {
+// 	position: fixed;
+// 	top: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	background: rgba($dark, 0.4);
+// 	z-index: 9999;
 
-	p {
-		background: $white;
-		width: 150px;
-		text-align: center;
-		margin: 40vh auto 0;
-		padding: 40px 0;
-		border-radius: 3px;
-		box-shadow: 0 0 20px 0 rgba($dark, 0.5);
-	}
-}
-
-.error-msg {
-	margin-top: 1rem;
-	text-align: center;
-
-	p {
-		color: $error;
-		margin: 0;
-	}
-}
+// 	p {
+// 		background: $white;
+// 		width: 150px;
+// 		text-align: center;
+// 		margin: 40vh auto 0;
+// 		padding: 40px 0;
+// 		border-radius: 3px;
+// 		box-shadow: 0 0 20px 0 rgba($dark, 0.5);
+// 	}
+// }
 
 .button {
-	background: $primary;
-	border: 0;
-	outline: 0;
-	color: $white;
-	padding: 0.8rem 1rem;
-	min-width: 150px;
-	font-size: 16px;
-	border-radius: 3px;
-	cursor: pointer;
+  background: $primary;
+  border: 0;
+  outline: 0;
+  color: $white;
+  padding: 0.8rem 1rem;
+  min-width: 150px;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
 
-	&:hover {
-		background: lighten($primary, 5%);
-	}
+  &:hover {
+    background: lighten($primary, 5%);
+  }
 
-	&:disabled {
-		opacity: 0.5;
+  &:disabled {
+    opacity: 0.5;
 
-		&:hover {
-			background: $primary;
-		}
-	}
+    &:hover {
+      background: $primary;
+    }
+  }
 }
 
 .text-center {
-	text-align: center;
+  text-align: center;
 }
 
 .inline {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-	li {
-		display: inline-block;
-	}
+  li {
+    display: inline-block;
+  }
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 form {
-	label {
-		display: block;
-		font-size: 16px;
-		margin-bottom: 0.5rem;
-	}
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
 
-	input {
-		display: block;
-		width: 100%;
-		margin-bottom: 1rem;
-		font-size: 16px;
-		padding: 10px;
-		outline: 0;
-		border: 1px solid #e6ecf0;
-		border-radius: 3px;
+  input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
 
-		&:focus {
-			box-shadow: 0 0 5px 0 rgba($dark, 0.2);
-		}
-	}
+    &:focus {
+      box-shadow: 0 0 5px 0 rgba($dark, 0.2);
+    }
+  }
 
-	textarea {
-		resize: none;
-		border: 1px solid #e6ecf0;
-		outline: 0;
-		height: 100px;
-		width: 100%;
-		padding: 10px;
-		font-size: 16px;
-	}
+  textarea {
+    resize: none;
+    border: 1px solid #e6ecf0;
+    outline: 0;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
 }
 // transitions
 
 .fade-enter-active {
-	transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 .fade-leave-active {
-	transition: opacity 0s;
+  transition: opacity 0s;
 }
 
 .fade-enter,
 .fade-leave-to {
-	opacity: 0;
+  opacity: 0;
 }
