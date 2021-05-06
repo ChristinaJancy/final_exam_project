@@ -28,6 +28,34 @@ const routes = [
       requiresAuth: true,
     },
   },
+  {
+      path: "/billing",
+      name: "billing",
+      component: () =>
+        import(/* webpackChunkName: "billing" */ "../views/Billing.vue"),
+      meta: {
+        requiresAuth: true,
+      }
+  },
+  {
+    path: "/link-opportunities",
+    name: "link-opportunities",
+    component: () =>
+      import(/* webpackChunkName: "link-opportunities" */ "../views/LinkOpportunities.vue"),
+    meta: {
+      requiresAuth: true,
+    }
+},
+  {
+    path: "/lists",
+    name: "lists",
+    component: () =>
+      import(/* webpackChunkName: "lists" */ "../views/Lists.vue"),
+    meta: {
+      requiresAuth: true,
+    }
+    
+},
 ];
 
 const router = new VueRouter({

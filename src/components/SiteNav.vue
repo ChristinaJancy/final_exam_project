@@ -1,18 +1,17 @@
 <template>
   <div>
-
     <v-app-bar flat class="background">
       <!-- <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon> -->
       <!-- <router-link to="/">
         <v-toolbar-title>Tabtimize</v-toolbar-title>
       </router-link> -->
       <v-spacer></v-spacer>
-           <v-switch
-              v-model="$vuetify.theme.dark"
-              inset
-              color="light"
-              class="pt-8"
-            ></v-switch>
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        inset
+        color="light"
+        class="pt-8"
+      ></v-switch>
       <div class="text-center">
         <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on, attrs }">
@@ -85,11 +84,23 @@
         <router-link to="/">
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-view-dashboard</v-icon>
+              <v-icon>mdi-view-dashboard-outline</v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title> Dashboard</v-list-item-title>
+              <v-list-item-title>Dashboard</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
+
+        <router-link to="link-opportunities">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-link</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>Link Opportunities</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -97,11 +108,35 @@
         <router-link to="Settings">
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-help-box</v-icon>
+              <v-icon>mdi-cog-outline</v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
               <v-list-item-title>Settings</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
+
+        <router-link to="Billing">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-credit-card-outline</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>Billing and usage</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
+
+        <router-link to="Lists">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-format-list-bulleted</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>Lists</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -133,5 +168,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
