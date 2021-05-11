@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import 'firebase/firestore'
 import * as fb from '../firebase'
 import router from '../router/index'
-import {usersCollection} from '../firebase.js'
+import { dbPageAdd, usersCollection} from '../firebase.js'
 import pathify from 'vuex-pathify'
 Vue.use(Vuex)
 
@@ -15,8 +15,27 @@ export default new Vuex.Store({
   state: {
     currentUser: null,
     userProfile: {},
+    pages:[],
   },
   mutations: {
+    setPages: state => {
+      let pages = []
+
+      dbPageAdd.onSnapshot((snapshotItems) => {
+       
+        snapshotItems.forEach((doc) => {
+          var pageData = doc.data();
+          pages.push({
+            ...pageData,
+            id: doc.id
+          })
+        })
+        console.log(pages)
+        state.pages = pages;
+        pages = []
+      }
+    )},
+
     setUserProfile(state, val) {
       state.userProfile = val
     },
@@ -48,6 +67,9 @@ export default new Vuex.Store({
     )},
   },
   actions: {
+    setPages: context => {
+      context.commit('setPages')
+    },
     async login({ dispatch }, form) {
       // sign user in
       const { user } = await fb.auth.signInWithEmailAndPassword(form.email, form.password)
@@ -92,7 +114,13 @@ export default new Vuex.Store({
     },
   },
   modules: {
-  }
+  },
+
+
+  getters:{
+    currentUser: state => state.currentUser,
+    getPages: state => state.pages,
+  },
 
   
 })

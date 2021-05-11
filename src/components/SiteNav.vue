@@ -140,6 +140,18 @@
             </v-list-item-content>
           </v-list-item>
         </router-link>
+
+        <router-link to="add-items">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-shield-account-outline</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>Admin</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
       </v-list>
     </v-navigation-drawer>
   </div>

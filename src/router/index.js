@@ -39,7 +39,7 @@ const routes = [
   },
   {
     path: "/link-opportunities",
-    name: "link-opportunities",
+    name: "link opportunities",
     component: () =>
       import(/* webpackChunkName: "link-opportunities" */ "../views/LinkOpportunities.vue"),
     meta: {
@@ -55,6 +55,16 @@ const routes = [
       requiresAuth: true,
     }
     
+},
+{
+  path: "/add-items",
+  name: "AddNewItems",
+  component: () =>
+    import(/* webpackChunkName: "lists" */ "../views/admin/AddNewItems.vue"),
+  meta: {
+    requiresAuth: true,
+  }
+  
 },
 ];
 

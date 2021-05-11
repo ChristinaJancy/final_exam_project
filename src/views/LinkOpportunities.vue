@@ -1,94 +1,95 @@
-<template>
-  <div id="LO">
-    <section>
-      <div class="row">
-        <div id="beCard" class="card-header border-0 col-sm">
-          <h3 style="font-weight:bold;" class="mb-0">Link Opportunities</h3>
-          <h5>registered pages.</h5>
-        </div>
-        <div class="col-sm mt-sm-3">
-          <button
-            class="btn btn-sm btn-danger edRePa"
-            data-toggle="modal"
-            data-target="#registeredPagesModal"
-          >
-            Edit Registered Pages
-          </button>
-        </div>
-      </div>
 
-      <h3 id="mainTopicId" class="text-center text-truncate">
-        <span id="mainTopicFor">
-          Main topic for
-          <span id="mainTopicData"><strong>ghf</strong></span></span
-        >
-      </h3>
-      <div class="table-responsive">
-        <table class="table table-hover" id="be-site-links">
-          <thead class="thead-light">
-            <tr>
-              <th id="urlPages" class="col" style="width:30%">
-                Registered Pages
-                <i
-                  class="d-none helpIcon fas fa-question"
-                  data-toggle="tooltip"
-                  data-original-title="Under URL you will find all your registered pages. You can choose to see the relevant link opportunities we have found for each of your pages by clicking on the URL."
-                >
-                </i>
-              </th>
-              <th id="urlTopic" class="col" style="width:30%">
-                URL topic
-                <i
-                  class="d-none helpIcon fas fa-question"
-                  data-toggle="tooltip"
-                  data-original-title="URL content topic shows what the primary topic of the page is about. A page may have more than one topic but the most relevant one is usually displayed"
-                >
-                </i>
-              </th>
-              <th id="linkOpp" class="col" style="width:30%">
-                Link opportunities
-                <i
-                  class="d-none helpIcon fas fa-question"
-                  data-toggle="tooltip"
-                  data-original-title="Under this section you can see how many link opportunities we have found for each page. If 0 is displayed, it means that we have not yet found any relevant opportunities for the page yet."
-                >
-                </i>
-              </th>
-              <th id="lastAna" class="col" style="width:30%">
-                Last Analyzed
-                <i
-                  class="d-none helpIcon fas fa-question"
-                  data-toggle="tooltip"
-                  data-original-title="Below you can see when the URL was last analyzed. A fresh page analysis can be requested by tapping the refresh icon. Note that this action costs one analysis credit."
-                >
-                </i>
-              </th>
-            </tr>
-          </thead>
-        </table>
-        <!-- Test label start-->
-      </div>
-    </section>
-  </div>
+<template>
+  <section class="linkOpportunities">
+    <v-img
+      :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
+   
+      cover
+    >
+      <v-theme-provider dark>
+        <v-container>
+          <v-row>
+            <v-col col="10" class="mx-auto">
+              <h1>All Target Pages</h1>
+              <br>
+              <div class="pa-2" id="info">
+                <v-simple-table id="menu-table" light>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th class="text-left" style="width=70%;">Target Page(s)</th>
+                      <th class="text-left" style="width=100%">URL topic</th>
+                      <th class="text-left" style="width=100%">Link opportunities</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="item in pages" :key="item.company">
+                      <td id="id_pageImg">
+                        <v-img v-bind:src="item.image"></v-img>
+                      </td>
+                      <td>
+                        <span id="td_pageLink">{{item.pageLink}}</span>
+                      </td>
+                      <td> <span id="page_urlTopic">{{item.urlTopic}}</span></td>
+                      <td>{{ Math.ceil(Math.random()*100) }}</td>
+                    </tr>
+                  </tbody>
+                </v-simple-table>
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-theme-provider>
+    </v-img>
+ 
+  </section>
 </template>
 
-<script>
-import { mapState } from "vuex";
-
+<script scoped>
+  /*eslint-disable*/
+// import { dbMenuAdd } from '../../firebase.js'
+import { pages } from '../firebase.js'
 export default {
-  components: {},
   data() {
     return {
+    }
+  },
+    beforeCreate() {
+    this.$store.dispatch("setPages");
+  },
+  methods: {
 
-    };
   },
   computed: {
-    ...mapState(["userProfile"]),
-  },
-  methods: {}
+    pages() {
+      return this.$store.getters.getPages;
+    },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 
+// Starts here:
+#info {
+  background-color: rgb(255, 255, 255);
+}
+tr th {
+  font-weight: bold;
+}
+#td_name {
+  font-weight: bold;
+}
+
+#id_pageImg{
+  max-width:50px;
+  max-height:auto;
+  padding:5px;
+}
+.col h1 {
+  text-align: right;
+}
+.col:last-child h1 {
+  text-align: left;
+}
 </style>

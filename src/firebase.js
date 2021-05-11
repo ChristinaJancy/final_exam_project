@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
+import 'firebase/storage'
 
 var firebaseConfig = {
     apiKey: "AIzaSyD_OBXdRcJ2j9AxXCrO5keR4yA9qvgjyxk",
@@ -13,9 +14,9 @@ var firebaseConfig = {
     measurementId: "G-4Y37QM8G7F"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+            // firebase.initializeApp(firebaseConfig);
+ const fb = firebase.initializeApp(firebaseConfig);
   // firebase.analytics();
-
 
   // utils
 const db = firebase.firestore()
@@ -23,10 +24,13 @@ const auth = firebase.auth()
 
 // collection references
 const usersCollection = db.collection('users')
+const dbPageAdd = db.collection('pages');
 
 // export utils/refs
 export {
+  fb,
   db,
   auth,
-  usersCollection
+  usersCollection,
+  dbPageAdd, 
 }
