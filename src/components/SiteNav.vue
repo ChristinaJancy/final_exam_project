@@ -71,7 +71,7 @@
           <v-img src="../assets/favicon.png"></v-img>
         </v-list-item-avatar>
 
-        <v-list-item-title>www.Tabtimize.com</v-list-item-title>
+        <v-list-item-title>{{userProfile.company}} </v-list-item-title>
 
         <!-- <v-btn icon @click.stop="mini = !mini">
           <v-icon>mdi-chevron-left</v-icon>
@@ -158,6 +158,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -176,6 +177,9 @@ export default {
     logout() {
       this.$store.dispatch("logout");
     },
+  },
+    computed: {
+    ...mapState(['userProfile'])
   },
 };
 </script>

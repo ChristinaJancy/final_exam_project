@@ -75,11 +75,13 @@ export default new Vuex.Store({
       // update user object
       const userRef = await fb.usersCollection.doc(userId).update({
         name: user.name,
+        nameLast: user.nameLast,
         company: user.company,
+        companyType: user.companyType
       })
-    
+
       dispatch('fetchUserProfile', { uid: userId })
-    },  
+    },
 
 
     setPages: context => {
@@ -99,7 +101,10 @@ export default new Vuex.Store({
       // create user object in userCollections
       await fb.usersCollection.doc(user.uid).set({
         name: form.name,
-        company: form.company
+        nameLast: form.nameLast,
+        company: form.company,
+        companyType: form.companyType,
+        image:form.image
       })
 
       // fetch user profile and set in state

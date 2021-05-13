@@ -1,22 +1,38 @@
 <template>
   <div id="login">
-    <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
+    <PasswordReset
+      v-if="showPasswordReset"
+      @close="togglePasswordReset()"
+    ></PasswordReset>
     <section>
       <div class="col1">
         <h1>Tabtimize</h1>
-        <p>Welcome to <a href="https://tabtimize.com/" target="_blank">Tabtimize.</a> Web app powered by Vue.js, vuex and Firebase.
-          </p>
+        <p>
+          Welcome to
+          <a href="https://tabtimize.com/" target="_blank">Tabtimize.</a>Powered
+          by Vue.js, vuex and Firebase.
+        </p>
       </div>
       <div :class="{ 'signup-form': !showLoginForm }" class="col2">
         <form v-if="showLoginForm" @submit.prevent>
           <h1>Welcome Back</h1>
           <div>
             <label for="email1">Email</label>
-            <input v-model.trim="loginForm.email" type="text" placeholder="you@email.com" id="email1" />
+            <input
+              v-model.trim="loginForm.email"
+              type="text"
+              placeholder="you@email.com"
+              id="email1"
+            />
           </div>
           <div>
             <label for="password1">Password</label>
-            <input v-model.trim="loginForm.password" type="password" placeholder="******" id="password1" />
+            <input
+              v-model.trim="loginForm.password"
+              type="password"
+              placeholder="******"
+              id="password1"
+            />
           </div>
           <button @click="login()" class="button">Log In</button>
           <div class="extras">
@@ -27,20 +43,66 @@
         <form v-else @submit.prevent>
           <h1>Get Started</h1>
           <div>
-            <label for="name">Name</label>
-            <input v-model.trim="signupForm.name" type="text" placeholder="Your name" id="name" />
+            <label for="name">First Name</label>
+            <input
+              v-model.trim="signupForm.name"
+              type="text"
+              placeholder="Bob"
+              id="name"
+            />
           </div>
           <div>
-            <label for="company">Company</label>
-            <input v-model.trim="signupForm.company" type="text" placeholder="Company" id="company" />
+            <label for="nameLast">Last Name</label>
+            <input
+              v-model.trim="signupForm.nameLast"
+              type="text"
+              placeholder="Johnson"
+              id="nameLast"
+            />
+          </div>
+          <div>
+            <label for="company">Company name</label>
+            <input
+              v-model.trim="signupForm.company"
+              type="text"
+              placeholder="YouTube"
+              id="company"
+            />
+          </div>
+          <div>
+            <label for="companyType">Company/business Type</label>
+            <input
+              v-model.trim="signupForm.companyType"
+              type="text"
+              placeholder="Online video platform"
+              id="companyType"
+            />
           </div>
           <div>
             <label for="email2">Email</label>
-            <input v-model.trim="signupForm.email" type="text" placeholder="you@email.com" id="email2" />
+            <input
+              v-model.trim="signupForm.email"
+              type="text"
+              placeholder="example@email.com"
+              id="email2"
+            />
           </div>
           <div>
             <label for="password2">Password</label>
-            <input v-model.trim="signupForm.password" type="password" placeholder="min 6 characters" id="password2" />
+            <input
+              v-model.trim="signupForm.password"
+              type="password"
+              placeholder="min 6 characters"
+              id="password2"
+            />
+          </div>
+          <div>
+            <label for="image">Profile Picture</label>
+            <v-file-input
+              id="image"
+              prepend-icon="mdi-camera"
+              @change="uploadImage"
+            ></v-file-input>
           </div>
           <button @click="signup()" class="button">Sign Up</button>
           <div class="extras">
@@ -53,56 +115,95 @@
 </template>
 
 <script>
-import PasswordReset from '@/components/PasswordReset'
+import PasswordReset from "@/components/PasswordReset";
+import { fb } from "../firebase.js";
+/*eslint-disable*/
 export default {
   components: {
-    PasswordReset
+    PasswordReset,
   },
   data() {
     return {
+      image: null,
       loginForm: {
-        email: '',
-        password: ''
+        email: "",
+        password: "",
       },
       signupForm: {
-        name: '',
-        company: '',
-        email: '',
-        password: ''
+        name: "",
+        nameLast: "",
+        company: "",
+        companyType: "",
+        email: "",
+        password: "",
+        image: null
       },
       showLoginForm: true,
-      showPasswordReset: false
-    }
+      showPasswordReset: false,
+    };
   },
   methods: {
     toggleForm() {
-      this.showLoginForm = !this.showLoginForm
+      this.showLoginForm = !this.showLoginForm;
     },
     togglePasswordReset() {
-      this.showPasswordReset = !this.showPasswordReset
+      this.showPasswordReset = !this.showPasswordReset;
     },
     login() {
-      this.$store.dispatch('login', {
+      this.$store.dispatch("login", {
         email: this.loginForm.email,
-        password: this.loginForm.password
-      })
+        password: this.loginForm.password,
+      });
     },
     signup() {
-      this.$store.dispatch('signup', {
+      this.$store.dispatch("signup", {
         email: this.signupForm.email,
         password: this.signupForm.password,
         name: this.signupForm.name,
-        company: this.signupForm.company
-      })
-    }
-  }
-}
+        nameLast: this.signupForm.nameLast,
+        company: this.signupForm.company,
+        companyType: this.signupForm.companyType,
+        image: this.signupForm.image
+      });
+    },
+
+    uploadImage(e) {
+      //e is event
+      let file = e; //store file in variable
+      console.log(e); //check console.log
+      var storageRef = fb.storage().ref("users/" + file.name);
+      let uploadTask = storageRef.put(file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => {
+          //handle unsuccesful uploads
+        },
+        () => {
+          //Handle succesful uploads on complete
+          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+            this.image = downloadURL;
+            console.log("File available", downloadURL);
+          });
+        }
+      );
+    },
+  },
+};
 </script>
 
-
 <style lang="scss" scoped>
+label {
+  font-weight: bold;
+}
 #login {
-  background: linear-gradient(to right, $primary 0%, $primary 50%, $white 50%, $white 100%);
+  background: linear-gradient(
+    to right,
+    $primary 0%,
+    $primary 50%,
+    $white 50%,
+    $white 100%
+  );
 
   @media screen and (max-width: 742px) {
     height: 100vh;
@@ -228,5 +329,4 @@ export default {
     }
   }
 }
-
 </style>

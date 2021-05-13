@@ -1,5 +1,6 @@
 <template>
   <section id="settings">
+
     <div class="col1">
       <h2>Settings</h2>
       <p>Update your profile</p>
@@ -10,45 +11,88 @@
 
       <form @submit.prevent>
         <label for="name">Name</label>
-        <input v-model.trim="name" type="text" :placeholder="userProfile.name" id="name" />
+        <input
+          v-model.trim="name"
+          type="text"
+          :placeholder="userProfile.name"
+          id="name"
+        />
+
+        <label for="nameLast">Last Name</label>
+        <input
+          v-model.trim="nameLast"
+          type="text"
+          :placeholder="userProfile.nameLast"
+          id="nameLast"
+        />
 
         <label for="company">Company</label>
-        <input v-model.trim="company" type="text" :placeholder="userProfile.company" id="company" />
+        <input
+          v-model.trim="company"
+          type="text"
+          :placeholder="userProfile.company"
+          id="company"
+        />
 
-        <button @click="updateProfile()" class="button">Update Profile</button>
+        <label for="companyType">Company Type</label>
+        <input
+          v-model.trim="companyType"
+          type="text"
+          :placeholder="userProfile.companyType"
+          id="companyType"
+        />
+
+        <button
+          @click="updateProfile() + updateProfilePicture()"
+          class="button"
+        >
+          Update Profile
+        </button>
       </form>
     </div>
   </section>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
-      name: '',
-      company: '',
-      showSuccess: false
-    }
+      name: "",
+      nameLast: "",
+      company: "",
+      companyType: "",
+      showSuccess: false,
+    };
   },
   computed: {
-    ...mapState(['userProfile'])
+    ...mapState(["userProfile"]),
   },
   methods: {
     updateProfile() {
-      this.$store.dispatch('updateProfile', {
-        name: this.name !== '' ? this.name : this.userProfile.name,
-       company: this.company !== '' ? this.company : this.userProfile.company
-      })
-      this.name = ''
-      this.company = ''
-      this.showSuccess = true
+      this.$store.dispatch("updateProfile", {
+        name: this.name !== "" ? this.name : this.userProfile.name,
+        nameLast: this.nameLast !== "" ? this.nameLast : this.userProfile.nameLast,
+        company: this.company !== "" ? this.company : this.userProfile.company,
+        companyType: this.companyType !== "" ? this.companyType : this.userProfile.companyType,
+      });
+      this.name = "";
+      this.nameLast = "";
+      this.company = "";
+      this.companyType = "";
+      this.showSuccess = true;
       setTimeout(() => {
-        this.showSuccess = false
-      }, 2000)
-    }
-  }
-}
+        this.showSuccess = false;
+      }, 2000);
+      
+    },
+
+    // profile picture test start --------
+
+    // profile picture test end ----------
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -58,7 +102,7 @@ export default {
 
   .col1 {
     max-width: 600px;
-    margin: 5vh auto 0;
+    margin: 0 auto;
     // background: $white;
     padding: 2rem;
   }
