@@ -12,8 +12,8 @@
         <label for="name">Name</label>
         <input v-model.trim="name" type="text" :placeholder="userProfile.name" id="name" />
 
-        <label for="title">Job Title</label>
-        <input v-model.trim="title" type="text" :placeholder="userProfile.title" id="title" />
+        <label for="company">Company</label>
+        <input v-model.trim="company" type="text" :placeholder="userProfile.company" id="company" />
 
         <button @click="updateProfile()" class="button">Update Profile</button>
       </form>
@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       name: '',
-      title: '',
+      company: '',
       showSuccess: false
     }
   },
@@ -38,10 +38,10 @@ export default {
     updateProfile() {
       this.$store.dispatch('updateProfile', {
         name: this.name !== '' ? this.name : this.userProfile.name,
-        title: this.title !== '' ? this.title : this.userProfile.title
+       company: this.company !== '' ? this.company : this.userProfile.company
       })
       this.name = ''
-      this.title = ''
+      this.company = ''
       this.showSuccess = true
       setTimeout(() => {
         this.showSuccess = false

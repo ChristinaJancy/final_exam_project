@@ -31,8 +31,8 @@
             <input v-model.trim="signupForm.name" type="text" placeholder="Your name" id="name" />
           </div>
           <div>
-            <label for="title">Title</label>
-            <input v-model.trim="signupForm.title" type="text" placeholder="Company" id="title" />
+            <label for="company">Company</label>
+            <input v-model.trim="signupForm.company" type="text" placeholder="Company" id="company" />
           </div>
           <div>
             <label for="email2">Email</label>
@@ -66,7 +66,7 @@ export default {
       },
       signupForm: {
         name: '',
-        title: '',
+        company: '',
         email: '',
         password: ''
       },
@@ -92,7 +92,7 @@ export default {
         email: this.signupForm.email,
         password: this.signupForm.password,
         name: this.signupForm.name,
-        title: this.signupForm.title
+        company: this.signupForm.company
       })
     }
   }

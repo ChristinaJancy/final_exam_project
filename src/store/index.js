@@ -5,6 +5,7 @@ import * as fb from '../firebase'
 import router from '../router/index'
 import { dbPageAdd, usersCollection} from '../firebase.js'
 import pathify from 'vuex-pathify'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     currentUser: null,
     userProfile: {},
     pages:[],
+    
   },
   mutations: {
     setPages: state => {
@@ -67,6 +69,19 @@ export default new Vuex.Store({
     )},
   },
   actions: {
+    async updateProfile({ dispatch }, user) {
+      const userId = fb.auth.currentUser.uid 
+      userRef
+      // update user object
+      const userRef = await fb.usersCollection.doc(userId).update({
+        name: user.name,
+        company: user.company,
+      })
+    
+      dispatch('fetchUserProfile', { uid: userId })
+    },  
+
+
     setPages: context => {
       context.commit('setPages')
     },
@@ -84,7 +99,7 @@ export default new Vuex.Store({
       // create user object in userCollections
       await fb.usersCollection.doc(user.uid).set({
         name: form.name,
-        title: form.title
+        company: form.company
       })
 
       // fetch user profile and set in state

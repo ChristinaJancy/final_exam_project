@@ -6,7 +6,7 @@
           <div class="profile">
             <small>Welcome back</small>
             <h2>{{ userProfile.name }}</h2>
-            <p>{{ userProfile.title }}</p>
+            <p>{{ userProfile.company }}</p>
           </div>
         </v-col>
         <v-col class="col-12">
