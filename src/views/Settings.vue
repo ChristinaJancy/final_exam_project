@@ -1,6 +1,5 @@
 <template>
   <section id="settings">
-
     <div class="col1">
       <h2>Settings</h2>
       <p>Update your profile</p>
@@ -8,6 +7,13 @@
       <transition name="fade">
         <p v-if="showSuccess" class="success">profile updated</p>
       </transition>
+
+      <v-file-input
+        label="File input"
+        prepend-icon="mdi-camera"
+        required
+        @change="uploadImage"
+      ></v-file-input>
 
       <form @submit.prevent>
         <label for="name">Name</label>
@@ -43,7 +49,8 @@
         />
 
         <button
-          @click="updateProfile() + updateProfilePicture()"
+          @click="updateProfile()"
+          v-on:click="addProfilePicture()"
           class="button"
         >
           Update Profile
@@ -55,10 +62,15 @@
 
 <script>
 import { mapState } from "vuex";
-
+import { fb, usersCollection } from "../firebase";
+import { auth } from "../firebase";
+// , usersPictures
+// , usersCollection
+/*eslint-disable*/
 export default {
   data() {
     return {
+      image: null,
       name: "",
       nameLast: "",
       company: "",
@@ -66,16 +78,21 @@ export default {
       showSuccess: false,
     };
   },
+
   computed: {
-    ...mapState(["userProfile"]),
+    ...mapState(["userProfile", "usersPictures"]),
   },
   methods: {
     updateProfile() {
       this.$store.dispatch("updateProfile", {
         name: this.name !== "" ? this.name : this.userProfile.name,
-        nameLast: this.nameLast !== "" ? this.nameLast : this.userProfile.nameLast,
+        nameLast:
+          this.nameLast !== "" ? this.nameLast : this.userProfile.nameLast,
         company: this.company !== "" ? this.company : this.userProfile.company,
-        companyType: this.companyType !== "" ? this.companyType : this.userProfile.companyType,
+        companyType:
+          this.companyType !== ""
+            ? this.companyType
+            : this.userProfile.companyType,
       });
       this.name = "";
       this.nameLast = "";
@@ -85,10 +102,50 @@ export default {
       setTimeout(() => {
         this.showSuccess = false;
       }, 2000);
-      
     },
 
     // profile picture test start --------
+    uploadImage(e) {
+      //e is event
+      let file = e; //store file in variable
+      console.log(e); //check console.log
+      var storageRef = fb.storage().ref("allProfilePictures/" + file.name);
+      let uploadTask = storageRef.put(file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => {
+          //handle unsuccesful uploads
+        },
+        () => {
+          //Handle succesful uploads on complete
+          //For instance, get the download URL: https://firebasestorage.googleapis.com
+          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+            this.image = downloadURL;
+            this.btnDisable = false;
+            console.log("File available", downloadURL);
+          });
+        }
+      );
+    },
+
+    // addProfilePicture() {
+    //   //debugger;
+    //   usersPictures.add({
+    //     image: this.image, //Add new property
+    //   });
+    // },
+
+    addProfilePicture() {
+      usersCollection
+        .doc(auth.currentUser.uid)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            doc.ref.update({ image: this.image });
+          }
+        });
+    },
 
     // profile picture test end ----------
   },

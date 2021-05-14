@@ -96,14 +96,14 @@
               id="password2"
             />
           </div>
-          <div>
+          <!-- <div>
             <label for="image">Profile Picture</label>
             <v-file-input
               id="image"
               prepend-icon="mdi-camera"
               @change="uploadImage"
             ></v-file-input>
-          </div>
+          </div> -->
           <button @click="signup()" class="button">Sign Up</button>
           <div class="extras">
             <a @click="toggleForm()">Back to Log In</a>
@@ -116,7 +116,7 @@
 
 <script>
 import PasswordReset from "@/components/PasswordReset";
-import { fb } from "../firebase.js";
+// import { fb } from "../firebase.js";
 /*eslint-disable*/
 export default {
   components: {
@@ -124,7 +124,7 @@ export default {
   },
   data() {
     return {
-      image: null,
+      // image: null,
       loginForm: {
         email: "",
         password: "",
@@ -136,7 +136,7 @@ export default {
         companyType: "",
         email: "",
         password: "",
-        image: null
+        // image: null,
       },
       showLoginForm: true,
       showPasswordReset: false,
@@ -162,32 +162,33 @@ export default {
         name: this.signupForm.name,
         nameLast: this.signupForm.nameLast,
         company: this.signupForm.company,
-        companyType: this.signupForm.companyType,
-        image: this.signupForm.image
+        companyType: this.signupForm.companyType
+        // image: this.signupForm.image,
       });
     },
 
-    uploadImage(e) {
-      //e is event
-      let file = e; //store file in variable
-      console.log(e); //check console.log
-      var storageRef = fb.storage().ref("users/" + file.name);
-      let uploadTask = storageRef.put(file);
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {},
-        (error) => {
-          //handle unsuccesful uploads
-        },
-        () => {
-          //Handle succesful uploads on complete
-          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            this.image = downloadURL;
-            console.log("File available", downloadURL);
-          });
-        }
-      );
-    },
+    // uploadImage(e) {
+      
+    //   //e is event
+    //   let file = e; //store file in variable
+    //   console.log(e, user); //check console.log
+    //   var storageRef = fb.storage().ref("users/" + file.name);
+    //   let uploadTask = storageRef.put(file);
+    //   uploadTask.on(
+    //     "state_changed",
+    //     (snapshot) => {},
+    //     (error) => {
+    //       //handle unsuccesful uploads
+    //     },
+    //     () => {
+    //       //Handle succesful uploads on complete
+    //       uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+    //         this.image = downloadURL;
+    //         console.log("File available", downloadURL);
+    //       });
+    //     }
+    //   );
+    // },
   },
 };
 </script>

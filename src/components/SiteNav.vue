@@ -16,7 +16,9 @@
         <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="warning" icon dark v-bind="attrs" v-on="on">
-              <v-img src="../assets/favicon.png" max-width="40px"></v-img>
+
+              <v-img v-bind:src="userProfile.image" max-width="60px"></v-img>
+         
             </v-btn>
           </template>
           <v-list>
@@ -68,7 +70,7 @@
       </div>
       <v-list-item class="px-2">
         <v-list-item-avatar tile>
-          <v-img src="../assets/favicon.png"></v-img>
+        <v-img v-bind:src="userProfile.image" max-width="60px"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-title>{{userProfile.company}} </v-list-item-title>

@@ -68,9 +68,9 @@ export default {
 
 <style lang="scss" scoped>
 #dashboard {
-  section {
-    padding: 2rem 0;
-  }
+  // section {
+  //   padding: 2rem 0;
+  // }
   /*.col1 {
     flex: 0 0 30%;
     @media screen and (max-width: 1000px) {

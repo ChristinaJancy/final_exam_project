@@ -32,5 +32,5 @@ export {
   db,
   auth,
   usersCollection,
-  dbPageAdd, 
+  dbPageAdd
 }
