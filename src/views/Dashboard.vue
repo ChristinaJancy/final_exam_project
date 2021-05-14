@@ -68,6 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 #dashboard {
+  padding: 0;
   // section {
   //   padding: 2rem 0;
   // }

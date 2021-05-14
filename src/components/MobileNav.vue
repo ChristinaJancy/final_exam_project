@@ -3,7 +3,7 @@
     <v-app-bar app clipped-left class="black d-lg-none d-md-none d-sm-none">
       <v-toolbar-title>
         <router-link to="/">
-          <v-img width="40" src="../assets/favicon.png"></v-img>
+          <v-img v-bind:src="userProfile.image" max-width="40px"></v-img>
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -38,7 +38,7 @@
           <router-link to="/settings">
             <v-list-item link>
               <v-list-item-content>
-                <v-list-item-title class="light--text"
+                <v-list-item-title class="iconcolor--text"
                   >Details</v-list-item-title
                 >
               </v-list-item-content>
@@ -75,6 +75,8 @@
 import firebase from "firebase";
 import "firebase/firestore";
 import store from "../store/index.js";
+import { mapState } from 'vuex'
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     //user is signed in
@@ -115,6 +117,7 @@ export default {
     currentUser() {
       return this.$store.getters.currentUser;
     },
+    ...mapState(['userProfile'])
   },
   beforeCreate() {},
 };
