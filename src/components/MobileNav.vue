@@ -3,7 +3,15 @@
     <v-app-bar app clipped-left class="black d-lg-none d-md-none d-sm-none">
       <v-toolbar-title>
         <router-link to="/">
-          <v-img v-bind:src="userProfile.image" max-width="40px"></v-img>
+          <v-img
+                v-bind:src="userProfile.image"
+                width="40px"
+                lazy-src="../assets/user-placeholder.png"
+              >
+                <template v-slot:placeholder>
+                  <v-img src="../assets/user-placeholder.png"></v-img>
+                </template>
+              </v-img>
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>

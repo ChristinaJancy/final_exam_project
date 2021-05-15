@@ -9,7 +9,7 @@
       </transition>
 
       <v-file-input
-        label="File input"
+        label="Update Profile Picture"
         prepend-icon="mdi-camera"
         required
         @change="uploadImage"
@@ -80,7 +80,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["userProfile", "usersPictures"]),
+    ...mapState(["userProfile"]),
   },
   methods: {
     updateProfile() {

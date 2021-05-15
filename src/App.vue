@@ -38,6 +38,7 @@ export default {
 @media screen and (max-width: 600px) {
   .v-main{
     padding:0 !important;
+    
   }
    footer{
      left:0 !important;

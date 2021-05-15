@@ -16,9 +16,16 @@
         <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="warning" icon dark v-bind="attrs" v-on="on">
-
-              <v-img v-bind:src="userProfile.image" max-width="60px"></v-img>
-         
+              <v-img
+                v-bind:src="userProfile.image"
+                max-width="40px"
+                contain
+                lazy-src="../assets/user-placeholder.png"
+              >
+                <template v-slot:placeholder>
+                  <v-img src="../assets/user-placeholder.png"></v-img>
+                </template>
+              </v-img>
             </v-btn>
           </template>
           <v-list>
@@ -53,6 +60,7 @@
       v-model="drawer"
       :mini-variant.sync="mini"
       permanent
+     height="100%"
       absolute
       app
       class="secondary"
@@ -70,10 +78,19 @@
       </div>
       <v-list-item class="px-2">
         <v-list-item-avatar tile>
-        <v-img v-bind:src="userProfile.image" max-width="60px"></v-img>
+          <v-img
+            v-bind:src="userProfile.image"
+            width="40px"
+            contain
+            lazy-src="../assets/user-placeholder.png"
+          >
+            <template v-slot:placeholder>
+              <v-img src="../assets/user-placeholder.png"></v-img>
+            </template>
+          </v-img>
         </v-list-item-avatar>
 
-        <v-list-item-title>{{userProfile.company}} </v-list-item-title>
+        <v-list-item-title> <b>{{ userProfile.company }} </b></v-list-item-title>
 
         <!-- <v-btn icon @click.stop="mini = !mini">
           <v-icon>mdi-chevron-left</v-icon>
@@ -160,7 +177,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -180,8 +197,8 @@ export default {
       this.$store.dispatch("logout");
     },
   },
-    computed: {
-    ...mapState(['userProfile'])
+  computed: {
+    ...mapState(["userProfile"]),
   },
 };
 </script>

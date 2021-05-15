@@ -1,5 +1,5 @@
 <template>
-  <v-footer id="default-footer" color="transparent"  app inset>
+  <v-footer id="footer" color="transparent"  app inset>
     <v-container>
       <v-row align="center">
         <v-col
@@ -57,4 +57,13 @@ export default {
 <style lang="sass" scoped>
 a
   color: inherit !important
+</style>
+
+
+<style lang="scss" scoped>
+  #footer{
+      position:absolute;
+   bottom:0;
+
+  }
 </style>
