@@ -103,8 +103,7 @@ export default new Vuex.Store({
         name: form.name,
         nameLast: form.nameLast,
         company: form.company,
-        companyType: form.companyType,
-        image: form.image,
+        companyType: form.companyType
       });
 
       // fetch user profile and set in state
