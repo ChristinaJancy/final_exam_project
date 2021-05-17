@@ -1,9 +1,7 @@
 <template>
   <section id="settings">
     <div class="col1">
-      <h2>Settings</h2>
-      <p>Update your profile</p>
-
+      <h2>Update your profile</h2>
       <transition name="fade">
         <p v-if="showSuccess" class="success">profile updated</p>
       </transition>

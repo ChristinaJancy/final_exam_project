@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Dashboard",
+    name: "dashboard",
     component: Dashboard,
     meta: {
       requiresAuth: true,
@@ -15,7 +15,7 @@ const routes = [
   },
   {
     path: "/login",
-    name: "Login",
+    name: "login",
     component: () =>
       import(/* webpackChunkName: "login" */ "../views/Login.vue"),
   },

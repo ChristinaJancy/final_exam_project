@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar flat class="background">
+    <v-app-bar flat color="transparent">
       <!-- <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon> -->
       <!-- <router-link to="/">
         <v-toolbar-title>Tabtimize</v-toolbar-title>
@@ -56,14 +56,15 @@
         <a @click="logout()">logout</a>
       </v-btn> -->
     </v-app-bar>
+
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant.sync="mini"
       permanent
-     height="100%"
+      height="100%"
       absolute
       app
-      class="secondary"
+      class="sitenav"
       style="z-index:10;"
     >
       <div align="end" class="px-2">
@@ -90,7 +91,9 @@
           </v-img>
         </v-list-item-avatar>
 
-        <v-list-item-title> <b>{{ userProfile.company }} </b></v-list-item-title>
+        <v-list-item-title>
+          <b>{{ userProfile.company }} </b></v-list-item-title
+        >
 
         <!-- <v-btn icon @click.stop="mini = !mini">
           <v-icon>mdi-chevron-left</v-icon>
@@ -203,4 +206,22 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.sitenav{
+  background-color: var(--v-backgroundNav-base) !important;
+
+}
+#gradient-banner {
+  background: linear-gradient(
+    -180deg,
+    #112243 -30%,
+    #782d76 0%,
+    #fe3652 100%
+  ) !important;
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  border-radius: 0 0 25% 25%;
+}
+</style>

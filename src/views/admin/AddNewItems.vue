@@ -1,10 +1,11 @@
 <template>
   <v-img
+    style="margin-top:-150px; z-index:1;"
     :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-    src="https://firebasestorage.googleapis.com/v0/b/endproject-pwa.appspot.com/o/assets%2Fyellow-flower.jpg?alt=media&token=14d019d8-9ad6-4fdf-b19a-caa08252632b"
+    src="https://firebasestorage.googleapis.com/v0/b/tabtimize.appspot.com/o/assets%2Fbg-why.svg?alt=media&token=72a53484-69b1-4873-a7ec-db5c005d8373"
     cover
   >
-    <section class="addNewItems">
+    <section class="addNewItems" style="padding-top:150px;">
       <v-snackbar top v-model="snackbar" :multi-line="multiLine">
         {{ itemAdded }}
         <template v-slot:action="{ attrs }">
@@ -17,9 +18,9 @@
       <v-theme-provider>
         <v-container>
           <v-row>
-            <v-col md="6" sm="12" xs="12" cols="12" style="text-align:center">
-              <h1>Add new page</h1>
-              <div class="pa-2" id="info">
+            <v-col md="6" sm="12" xs="12" cols="12">
+              <h1 class="text-center rounded-t-lg">Add new target page</h1>
+              <v-sheet class="pa-2 rounded-b-lg info" elevation="2">
                 <v-text-field
                   clearable
                   label="Company"
@@ -28,13 +29,13 @@
                 ></v-text-field>
                 <v-text-field
                   clearable
-                  label="Link"
+                  label="URL"
                   required
                   v-model="pageLink"
                 ></v-text-field>
                 <v-text-field
                   clearable
-                  label="URL Topic"
+                  label="Page topic"
                   required
                   v-model="urlTopic"
                 ></v-text-field>
@@ -58,13 +59,13 @@
                 <v-btn color="error" class="black--text" depressed
                   >Cancel</v-btn
                 >
-              </div>
+              </v-sheet>
             </v-col>
 
-            <v-col md="6" sm="12" xs="12" cols="12" style="text-align:center">
-              <h1>PREVIEW</h1>
-              <div class="pa-2" id="info">
-                <v-simple-table id="product-table">
+            <v-col md="6" sm="12" xs="12" cols="12">
+              <h1 class="text-center rounded-t-lg">Preview</h1>
+              <div class="pa-2 rounded-b-lg info">
+                <v-simple-table id="product-table" class="transparent">
                   <thead>
                     <tr>
                       <th class="text-left" style="width70%">Company</th>
@@ -170,12 +171,20 @@ export default {
   color: $color;
 }
 h1 {
-  @include infobox_mixin(5px, white, 10px, 5px, white);
-  background-color: rgba(0, 0, 0, 0.445);
+  @include infobox_mixin(
+    5px,
+    var(--v-gradient1-base),
+    10px,
+    5px,
+    var(--v-light-base)
+  );
+  background-color: var(--v-gradient1-base) !important;
+  box-shadow: 0px 3px 1px -6px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%) !important;
+  text-transform: uppercase;
 }
-// Starts here:
-#info {
-  background-color: rgb(255, 255, 255);
+.info {
+  background-color: var(--v-secondary-base) !important;
 }
 tr th {
   font-weight: bold;
@@ -183,22 +192,11 @@ tr th {
 #td_name {
   font-weight: bold;
 }
-#product_description {
-  font-style: italic;
-  font-weight: 300;
-  color: black;
-  font-size: 13px;
-}
+
 .col h1 {
   text-align: right;
 }
 .col:last-child h1 {
   text-align: left;
-}
-#basket-checkout {
-  font-size: 13px;
-}
-#basket-checkout {
-  line-height: 2px;
 }
 </style>

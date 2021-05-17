@@ -64,6 +64,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    setUser(context, user) {
+      context.commit('userStatus', user)
+    },
     async updateProfile({ dispatch }, user) {
       const userId = fb.auth.currentUser.uid;
       userRef;

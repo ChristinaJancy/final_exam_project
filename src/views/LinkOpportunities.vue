@@ -13,13 +13,13 @@
               <h1>All Target Pages</h1>
               <br>
               <div class="pa-2" id="info">
-                <v-simple-table id="menu-table" light>
-                  <thead>
+                <v-simple-table id="menu-table" class="shadow secondary primary--text">
+                  <thead class="">
                     <tr>
                       <th></th>
-                      <th class="text-left" style="width=70%;">Target Page(s)</th>
-                      <th class="text-left" style="width=100%">URL topic</th>
-                      <th class="text-left" style="width=100%">Link opportunities</th>
+                      <th class="text-left primary--text" style="width=70%;">Target Page(s)</th>
+                      <th class="text-left primary--text" style="width=100%">URL topic</th>
+                      <th class="text-left primary--text" style="width=100%">Link opportunities</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -71,9 +71,7 @@ export default {
 <style lang="scss" scoped>
 
 // Starts here:
-#info {
-  background-color: rgb(255, 255, 255);
-}
+
 tr th {
   font-weight: bold;
 }
