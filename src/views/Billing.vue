@@ -139,7 +139,7 @@
           <v-card-title class="card-title justify-center">
             Payment method</v-card-title
           >
-          <v-card class="mx-auto border-bottom-green" max-width="344">
+          <v-card class="mx-auto border-bottom-green backgroundNav" max-width="344">
             <v-list-item three-line>
               <v-list-item-content id="payment-card-info">
                 <v-list-item-title class="mt-5">card number</v-list-item-title>
@@ -147,9 +147,10 @@
                 <v-list-item-title>expiration date</v-list-item-title>
                 <v-list-item-subtitle>02/02-2023</v-list-item-subtitle>
               </v-list-item-content>
-              <v-list-item-avatar size="80" class="mt-2">
-                <img
-                  src="https://cdn4.iconfinder.com/data/icons/major-credit-cards-glyph/48/Sed-26-512.png"
+              <v-list-item-avatar size="50" class="mt-2">
+                <v-img 
+                contain
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
                   alt="Visa logo"
                 />
               </v-list-item-avatar>
@@ -164,7 +165,7 @@
                 :bottom="true"
                 :absolute="true"
               >
-                active
+                <b>active</b>
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -334,8 +335,8 @@ export default {
   }
 }
 .border-bottom-green {
-  border-bottom: 3px solid #36b37e;
-  border-radius: 1.5rem;
+  border-bottom: 3px solid #36b37e !important;
+  border-radius: 1.5rem !important;
 }
 .billing-top-cards {
   height: 130px;

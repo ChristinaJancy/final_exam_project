@@ -58,7 +58,7 @@ const routes = [
 },
 {
   path: "/add-items",
-  name: "AddNewItems",
+  name: "target pages",
   component: () =>
     import(/* webpackChunkName: "lists" */ "../views/admin/AddNewItems.vue"),
   meta: {

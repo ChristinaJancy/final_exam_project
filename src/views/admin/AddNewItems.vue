@@ -19,7 +19,7 @@
         <v-container>
           <v-row>
             <v-col md="6" sm="12" xs="12" cols="12">
-              <h1 class="text-center rounded-t-lg">Add new target page</h1>
+              <h1 class="text-center rounded-t-lg">Add target page</h1>
               <v-sheet class="pa-2 rounded-b-lg info" elevation="2">
                 <v-text-field
                   clearable
@@ -158,27 +158,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @mixin infobox_mixin(
-//   $border-radius,
-//   $border-color,
-//   $padding,
-//   $margin-bottom,
-//   $color
-// ) {
-//   border: $border-radius solid $border-color;
-//   padding: $padding;
-//   margin-bottom: $margin-bottom;
-//   color: $color;
-// }
 h1 {
   @include infobox_mixin(
     5px,
     var(--v-gradient1-base),
     10px,
     5px,
-    var(--v-light-base)
+    var(--v-primary-base),
   );
-  background-color: var(--v-gradient1-base) !important;
+  background-color: transparent !important;
   box-shadow: 0px 3px 1px -6px rgb(0 0 0 / 20%),
     0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%) !important;
   text-transform: uppercase;
