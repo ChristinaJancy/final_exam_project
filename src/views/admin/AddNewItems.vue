@@ -158,18 +158,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@mixin infobox_mixin(
-  $border-radius,
-  $border-color,
-  $padding,
-  $margin-bottom,
-  $color
-) {
-  border: $border-radius solid $border-color;
-  padding: $padding;
-  margin-bottom: $margin-bottom;
-  color: $color;
-}
+// @mixin infobox_mixin(
+//   $border-radius,
+//   $border-color,
+//   $padding,
+//   $margin-bottom,
+//   $color
+// ) {
+//   border: $border-radius solid $border-color;
+//   padding: $padding;
+//   margin-bottom: $margin-bottom;
+//   color: $color;
+// }
 h1 {
   @include infobox_mixin(
     5px,

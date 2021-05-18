@@ -97,6 +97,19 @@ $tab-font-size: 0.775rem;
 $tab-font-weight: 500;
 $tabs-item-letter-spacing: normal;
 
+
+@mixin infobox_mixin(
+  $border-radius,
+  $border-color,
+  $padding,
+  $margin-bottom,
+  $color
+) {
+  border: $border-radius solid $border-color;
+  padding: $padding;
+  margin-bottom: $margin-bottom;
+  color: $color;
+}
 // h1,
 // h2,
 // h3,
