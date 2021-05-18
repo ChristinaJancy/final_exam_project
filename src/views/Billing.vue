@@ -187,7 +187,7 @@
       <!------------------Invoices------------------->
 
       <v-col cols="12" xl="12">
-        <v-card class="mx-4 px-4">
+        <v-card class="mx-4 px-4 secondary">
           <h3 class="mb-0">
             Invoices
           </h3>
@@ -196,7 +196,7 @@
               :headers="headers"
               :items="desserts"
               :items-per-page="5"
-              class="elevation-1"
+              class="elevation-1 secondary"
             ></v-data-table>
           </template>
         </v-card>

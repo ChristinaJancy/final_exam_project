@@ -190,7 +190,7 @@ section {
 // }
 
 .button {
-  background: $primary;
+  background: var(--v-secondary-base);
   border: 0;
   outline: 0;
   color: $white;
