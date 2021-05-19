@@ -96,7 +96,6 @@ $tab-font-size: 0.775rem;
 $tab-font-weight: 500;
 $tabs-item-letter-spacing: normal;
 
-
 @mixin infobox_mixin(
   $border-radius,
   $border-color,
@@ -109,38 +108,6 @@ $tabs-item-letter-spacing: normal;
   margin-bottom: $margin-bottom;
   color: $color;
 }
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// p {
-// 	margin: 0 0 0.5rem;
-// }
-
-// h1 {
-// 	font-size: 2rem;
-// }
-
-// h2 {
-// 	font-size: 1.8rem;
-// }
-
-// h3 {
-// 	font-size: 1.6rem;
-// }
-
-// h4 {
-// 	font-size: 1.4rem;
-// }
-
-// h5 {
-// 	font-size: 1.2rem;
-// }
-
-// p {
-// 	line-height: 1.5;
-// }
 
 a {
   font-family: "Open Sans", sans-serif;
@@ -181,25 +148,25 @@ section {
 // 	display: none;
 // }
 
-// .loading {
-// 	position: fixed;
-// 	top: 0;
-// 	right: 0;
-// 	bottom: 0;
-// 	left: 0;
-// 	background: rgba($dark, 0.4);
-// 	z-index: 9999;
+.loading {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba($dark, 0.4);
+	z-index: 9999;
 
-// 	p {
-// 		background: $white;
-// 		width: 150px;
-// 		text-align: center;
-// 		margin: 40vh auto 0;
-// 		padding: 40px 0;
-// 		border-radius: 3px;
-// 		box-shadow: 0 0 20px 0 rgba($dark, 0.5);
-// 	}
-// }
+	p {
+		background: $white;
+		width: 150px;
+		text-align: center;
+		margin: 40vh auto 0;
+		padding: 40px 0;
+		border-radius: 3px;
+		box-shadow: 0 0 20px 0 rgba($dark, 0.5);
+	}
+}
 
 .button {
   background: var(--v-TabBlue-base);
@@ -257,7 +224,6 @@ form {
     font-size: 16px;
     padding: 10px;
     outline: 0;
-    // border: 1px solid #e6ecf0;
     border-radius: 3px;
 
     &:focus {
@@ -267,7 +233,6 @@ form {
 
   textarea {
     resize: none;
-    // border: 1px solid #e6ecf0;
     outline: 0;
     height: 100px;
     width: 100%;

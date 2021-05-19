@@ -23,7 +23,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in pages" :key="item.company">
+                    <tr v-for="item in pages" :key="item.company" class="linkOppItem">
                       <td id="id_pageImg">
                         <v-img v-bind:src="item.image"></v-img>
                       </td>
@@ -71,7 +71,9 @@ export default {
 <style lang="scss" scoped>
 
 // Starts here:
-
+.linkOppItem:hover{
+  background: var(--v-light-base) !important;
+}
 tr th {
   font-weight: bold;
 }
