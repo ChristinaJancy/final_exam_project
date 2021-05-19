@@ -37,8 +37,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.v-list-item__title {
+h6 {
   font-family: "Montserrat", sans-serif !important;
 }
 h1 {
@@ -203,7 +202,7 @@ section {
 // }
 
 .button {
-  background: var(--v-secondary-base);
+  background: var(--v-TabBlue-base);
   border: 0;
   outline: 0;
   color: $white;

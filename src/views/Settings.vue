@@ -1,59 +1,136 @@
 <template>
-  <section id="settings">
-    <div class="col1">
-      <h2>Update your profile</h2>
+  <section id="account">
+    <div :class="{ settings: !showProfile }" class="col1">
       <transition name="fade">
         <p v-if="showSuccess" class="success">profile updated</p>
       </transition>
-
-      <v-file-input
-        label="Update Profile Picture"
-        prepend-icon="mdi-camera"
-        required
-        @change="uploadImage"
-      ></v-file-input>
-
-      <form @submit.prevent>
-        <label for="name">Name</label>
-        <input
-          v-model.trim="name"
-          type="text"
-          :placeholder="userProfile.name"
-          id="name"
-        />
-
-        <label for="nameLast">Last Name</label>
-        <input
-          v-model.trim="nameLast"
-          type="text"
-          :placeholder="userProfile.nameLast"
-          id="nameLast"
-        />
-
-        <label for="company">Company</label>
-        <input
-          v-model.trim="company"
-          type="text"
-          :placeholder="userProfile.company"
-          id="company"
-        />
-
-        <label for="companyType">Company Type</label>
-        <input
-          v-model.trim="companyType"
-          type="text"
-          :placeholder="userProfile.companyType"
-          id="companyType"
-        />
-
-        <button
-          @click="updateProfile()"
-          v-on:click="addProfilePicture()"
-          class="button"
+      <div v-if="showProfile" align="center">
+        <v-img
+          v-bind:src="userProfile.image"
+          width="180px"
+          lazy-src="../assets/user-placeholder.png"
         >
-          Update Profile
-        </button>
-      </form>
+          <template v-slot:placeholder>
+            <v-img src="../assets/user-placeholder.png"></v-img>
+          </template>
+        </v-img>
+        <v-row>
+          <v-col>
+            <h2 class="mb-1" style="text-align: center">
+              <b> {{ userProfile.name }} {{ userProfile.nameLast }} </b>
+            </h2>
+          </v-col>
+        </v-row>
+      </div>
+      <h2 v-else align="center">Update your profile</h2>
+
+      <v-divider></v-divider>
+<br>
+      <div v-if="showProfile">
+        <form class="mt-2">
+          <v-row class="pa-0 ma-0">
+            <v-sheet class="mx-10 transparent" max-width="90%">
+              <h3><b>Company</b></h3>
+              <small>
+                {{ userProfile.company }}
+              </small>
+              <br />
+              <br />
+              <h3><b>Company Type</b></h3>
+              <small>
+                {{ userProfile.companyType }}
+              </small>
+            </v-sheet>
+          </v-row>
+
+          <div
+            class="extras pt-12 mx-auto"
+            align="center"
+            justify="space-around"
+          >
+            <v-btn
+              @click="toggleForm()"
+              rounded
+              color="TabRed"
+              dark
+              class="button-red"
+            >
+              Update profile
+            </v-btn>
+          </div>
+        </form>
+      </div>
+
+      <div v-else>
+        <v-file-input
+          label="Update Profile Picture"
+          prepend-icon="mdi-camera"
+          required
+          @change="uploadImage"
+        ></v-file-input>
+
+        <form @submit.prevent>
+          <label for="name">Name</label>
+          <input
+            v-model.trim="name"
+            type="text"
+            :placeholder="userProfile.name"
+            id="name"
+          />
+
+          <label for="nameLast">Last Name</label>
+          <input
+            v-model.trim="nameLast"
+            type="text"
+            :placeholder="userProfile.nameLast"
+            id="nameLast"
+          />
+
+          <label for="company">Company</label>
+          <input
+            v-model.trim="company"
+            type="text"
+            :placeholder="userProfile.company"
+            id="company"
+          />
+
+          <label for="companyType">Company Type</label>
+          <input
+            v-model.trim="companyType"
+            type="text"
+            :placeholder="userProfile.companyType"
+            id="companyType"
+          />
+
+          <v-row>
+            <v-col align="left">
+              <v-btn
+                @click="toggleForm()"
+                rounded
+                text
+                color="TabRed"
+                dark
+                large
+                class="button-red"
+              >
+                <b>Go back</b>
+              </v-btn>
+            </v-col>
+            <v-col align="right">
+              <v-btn
+                @click="updateProfile()"
+                v-on:click="addProfilePicture()"
+                rounded
+                color="TabRed"
+                dark
+                class="button-red"
+              >
+                Update Profile
+              </v-btn>
+            </v-col>
+          </v-row>
+        </form>
+      </div>
     </div>
   </section>
 </template>
@@ -74,6 +151,8 @@ export default {
       company: "",
       companyType: "",
       showSuccess: false,
+      showProfile: true,
+      showSettings: true,
     };
   },
 
@@ -81,6 +160,10 @@ export default {
     ...mapState(["userProfile"]),
   },
   methods: {
+    toggleForm() {
+      this.showSettings = !this.showSettings;
+      this.showProfile = !this.showProfile;
+    },
     updateProfile() {
       this.$store.dispatch("updateProfile", {
         name: this.name !== "" ? this.name : this.userProfile.name,
@@ -151,8 +234,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.button-red {
+  text-transform: capitalize;
+}
+
 // settings
-#settings {
+#account {
   padding: 2rem 0;
 
   .col1 {
