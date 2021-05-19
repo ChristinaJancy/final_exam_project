@@ -67,6 +67,7 @@
       class="sitenav"
       style="z-index:10;"
     >
+
       <div align="end" class="px-2">
         <!-- <v-app-bar-nav-icon depressed class="navIcon transparent" @click.stop="mini = !mini">
         </v-app-bar-nav-icon>      -->
@@ -77,6 +78,7 @@
           <v-icon v-else color="primary">mdi-chevron-right </v-icon>
         </v-btn>
       </div>
+
       <v-list-item class="px-2">
         <v-list-item-avatar tile>
           <v-img
@@ -207,9 +209,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sitenav{
+.sitenav {
   background-color: var(--v-backgroundNav-base) !important;
-
 }
 #gradient-banner {
   background: linear-gradient(
