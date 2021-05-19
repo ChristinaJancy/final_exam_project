@@ -9,7 +9,7 @@
           <v-card-title class="justify-center">Analysis balance</v-card-title>
           <v-card-text class="text--primary">
             <div class="text-h5">
-              19 <span class="text-subtitle-2">156 used</span>
+              19 <span class="text-subtitle-2">/ 156 used</span>
             </div>
           </v-card-text>
 
@@ -139,12 +139,12 @@
           <v-card-title class="card-title justify-center">
             Payment method</v-card-title
           >
-          <v-card class="mx-auto border-bottom-green backgroundNav" max-width="344">
+          <v-card class="mx-auto py-4 border-bottom-green backgroundNav" max-width="344">
             <v-list-item three-line>
               <v-list-item-content id="payment-card-info">
                 <v-list-item-title class="mt-5">card number</v-list-item-title>
                 <v-list-item-subtitle>visa - 5442</v-list-item-subtitle>
-                <v-list-item-title>expiration date</v-list-item-title>
+                <v-list-item-title class="pt-3">expiration date</v-list-item-title>
                 <v-list-item-subtitle>02/02-2023</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-avatar size="50" class="mt-2">
