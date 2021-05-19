@@ -10,7 +10,7 @@
         <v-container>
           <v-row>
             <v-col col="10" class="mx-auto">
-              <h1>All Target Pages</h1>
+              <h1>Your link opportunities</h1>
               <br>
               <div class="pa-2" id="info">
                 <v-simple-table id="menu-table" class="shadow secondary primary--text">

@@ -26,7 +26,6 @@
       bottom
       fixed
       shift
-      :value="value"
       color="primary"
     >
       <v-btn v-for="(navItem, i) in navItems" :key="i" :to="navItem.link">
@@ -42,14 +41,14 @@
           </v-btn>
         </template>
         <v-list>
-          <router-link to="/add-items">
+          <router-link to="/account">
             <v-list-item link>
               <v-list-icon>
-                <v-icon>mdi-shield-account-variant-outline</v-icon></v-list-icon
+                <v-icon>mdi-cog-outline</v-icon></v-list-icon
               >
               <v-list-item-content>
                 <v-list-item-title class="iconcolor--text pl-2"
-                  >Admin</v-list-item-title
+                  >Account</v-list-item-title
                 >
               </v-list-item-content>
             </v-list-item>
@@ -122,8 +121,8 @@ export default {
       { name: "Links", link: "/link-opportunities", icon: "mdi-link" },
       { name: "Lists", link: "/lists", icon: "mdi-format-list-bulleted" },
       {
-        name: "Settings",
-        link: "/settings",
+        name: "Target Pages",
+        link: "/add-target-page",
         icon: "mdi-cog-outline",
       },
     ],

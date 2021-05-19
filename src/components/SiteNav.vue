@@ -129,14 +129,14 @@
           </v-list-item>
         </router-link>
 
-        <router-link to="Settings">
+        <router-link to="account">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-cog-outline</v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title>Settings</v-list-item-title>
+              <v-list-item-title>account</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -165,14 +165,14 @@
           </v-list-item>
         </router-link>
 
-        <router-link to="add-items">
+        <router-link to="add-target-page">
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-shield-account-outline</v-icon>
+              <v-icon>mdi-book-open-page-variant-outline</v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title>Admin</v-list-item-title>
+              <v-list-item-title>Target Pages</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>

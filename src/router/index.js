@@ -20,10 +20,10 @@ const routes = [
       import(/* webpackChunkName: "login" */ "../views/Login.vue"),
   },
   {
-    path: "/settings",
-    name: "settings",
+    path: "/account",
+    name: "account",
     component: () =>
-      import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
+      import(/* webpackChunkName: "settings" */ "../views/Account.vue"),
     meta: {
       requiresAuth: true,
     },
@@ -57,10 +57,10 @@ const routes = [
     
 },
 {
-  path: "/add-items",
+  path: "/add-target-page",
   name: "target pages",
   component: () =>
-    import(/* webpackChunkName: "lists" */ "../views/admin/AddNewItems.vue"),
+    import(/* webpackChunkName: "lists" */ "../views/admin/AddTargetPage.vue"),
   meta: {
     requiresAuth: true,
   }
