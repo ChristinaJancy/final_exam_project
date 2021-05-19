@@ -104,6 +104,7 @@ export default {
 
 <style lang="scss" scoped>
 #dashboard {
+  padding:0;
   .profile {
     padding: 2rem;
   }
