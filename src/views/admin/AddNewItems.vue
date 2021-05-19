@@ -47,18 +47,33 @@
                   @change="uploadImage"
                 ></v-file-input>
 
-                <v-btn
-                  color="success"
-                  class="black--text"
+                <v-row>
+                  <v-col align="left">
+                    <v-btn
+                      rounded
+                      text
+                      color="TabRed"
+                      dark
+                      small
+                      class="button-red"
+                      depressed
+                      ><b>Cancel</b></v-btn
+                    >
+                  </v-col>
+                  <v-col align="right">
+                   <v-btn
+                    rounded
+                  color="TabRed"
+                  class="white--text"
                   depressed
+                  small
                   v-on:click="addNewPage()"
                   :disabled="btnDisable"
                   @click="clear"
                   >Add Item</v-btn
                 >
-                <v-btn color="error" class="black--text" depressed
-                  >Cancel</v-btn
-                >
+                  </v-col>
+                </v-row>
               </v-sheet>
             </v-col>
 
@@ -164,8 +179,10 @@ h1 {
     var(--v-gradient1-base),
     10px,
     5px,
-    var(--v-primary-base),
+    var(--v-primary-base)
   );
+  font-size: 21px;
+  font-weight: 600;
   background-color: transparent !important;
   box-shadow: 0px 3px 1px -6px rgb(0 0 0 / 20%),
     0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%) !important;
