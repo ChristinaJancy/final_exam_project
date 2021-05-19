@@ -5,15 +5,17 @@
         <p v-if="showSuccess" class="success">profile updated</p>
       </transition>
       <div v-if="showProfile" align="center">
-        <v-img
-          v-bind:src="userProfile.image"
-          width="180px"
-          lazy-src="../assets/user-placeholder.png"
-        >
-          <template v-slot:placeholder>
-            <v-img src="../assets/user-placeholder.png"></v-img>
-          </template>
-        </v-img>
+        <v-avatar size="160">
+          <v-img
+            v-bind:src="userProfile.image"
+            lazy-src="../assets/user-placeholder.png"
+            contain
+          >
+            <template v-slot:placeholder>
+              <v-img src="../assets/user-placeholder.png"></v-img>
+            </template>
+          </v-img>
+        </v-avatar>
         <v-row>
           <v-col>
             <h2 class="mb-1" style="text-align: center">
@@ -25,7 +27,7 @@
       <h2 v-else align="center">Update your profile</h2>
 
       <v-divider></v-divider>
-<br>
+      <br />
       <div v-if="showProfile">
         <form class="mt-2">
           <v-row class="pa-0 ma-0">
@@ -61,7 +63,7 @@
         </form>
       </div>
 
-      <div v-else>
+      <div v-else class="background">
         <v-file-input
           label="Update Profile Picture"
           prepend-icon="mdi-camera"
