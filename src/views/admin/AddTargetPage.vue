@@ -28,10 +28,10 @@
                 <tr>
                   <th></th>
                   <th class="text-left primary--text">
-                    Company
+                    Pages
                   </th>
                   <th class="text-left primary--text">
-                    Target Page(s)
+                    URLs
                   </th>
                   <th class="text-left primary--text">
                     URL topic
@@ -47,14 +47,14 @@
               <tbody>
                 <tr
                   v-for="item in pages"
-                  :key="item.company"
+                  :key="item.pageName"
                   class="linkOppItem"
                 >
                   <td id="id_pageImg">
                     <v-img v-bind:src="item.image"></v-img>
                   </td>
                   <td>
-                    <span id="td_pageCompany">{{ item.company }}</span>
+                    <span id="td_pageName">{{ item.pageName }}</span>
                   </td>
                   <td>
                     <span id="td_pageLink">{{ item.pageLink }}</span>
@@ -95,8 +95,8 @@
 
                     <div class="pa-2" id="info">
                       <v-text-field
-                        label="Company"
-                        v-model="item.company"
+                        label="Page name"
+                        v-model="item.pageName"
                         style="width=70%;"
                       ></v-text-field>
                       <v-text-field
@@ -159,9 +159,9 @@
                 <v-sheet class="pa-2 rounded-b-lg info" elevation="2">
                   <v-text-field
                     clearable
-                    label="Company"
+                    label="page name"
                     required
-                    v-model="company"
+                    v-model="pageName"
                   ></v-text-field>
                   <v-text-field
                     clearable
@@ -220,7 +220,7 @@
                   <v-simple-table id="product-table" class="transparent">
                     <thead>
                       <tr>
-                        <th class="text-left" style="width70%">Company</th>
+                        <th class="text-left" style="width70%">Name</th>
                         <th class="text-left" style="width70%">Target Page</th>
                         <th class="text-left" style="width70%">URL topic</th>
                       </tr>
@@ -228,7 +228,7 @@
                     <tbody>
                       <tr>
                         <td>
-                          <span id="td_name">{{ company }}</span>
+                          <span id="td_name">{{ pageName }}</span>
                         </td>
 
                         <td>
@@ -269,7 +269,7 @@ import { dbPageAdd, fb } from "../../firebase";
 export default {
   data() {
     return {
-      company: "",
+      pageName: "",
       urlTopic: "",
       pageLink: "",
       item: [],
@@ -347,7 +347,7 @@ export default {
         });
     },
     clear() {
-      this.company = "";
+      this.pageName = "";
       this.urlTopic = "";
       this.pageLink = "";
     },
@@ -355,7 +355,7 @@ export default {
       //debugger;
       this.snackbar = true;
       dbPageAdd.add({
-        company: this.company,
+        pageName: this.pageName,
         urlTopic: this.urlTopic,
         pageLink: this.pageLink,
         image: this.image, //Add new property

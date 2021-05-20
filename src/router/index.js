@@ -29,19 +29,30 @@ const routes = [
     },
   },
   {
-      path: "/billing",
-      name: "billing",
-      component: () =>
-        import(/* webpackChunkName: "billing" */ "../views/Billing.vue"),
-      meta: {
-        requiresAuth: true,
-      }
+    path: "/billing",
+    name: "billing",
+    component: () =>
+      import(/* webpackChunkName: "billing" */ "../views/Billing.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/link-opportunities",
     name: "link opportunities",
     component: () =>
-      import(/* webpackChunkName: "link-opportunities" */ "../views/LinkOpportunities.vue"),
+      import(
+        /* webpackChunkName: "link-opportunities" */ "../views/LinkOpportunities.vue"
+      ),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/link-opportunity-for-:pageName",
+    name: "link opportunity",
+    component: () =>
+      import(/* webpackChunkName: "link-opportunity" */ "../components/LinkOpportunity.vue"),
     meta: {
       requiresAuth: true,
     }
@@ -53,26 +64,27 @@ const routes = [
       import(/* webpackChunkName: "lists" */ "../views/Lists.vue"),
     meta: {
       requiresAuth: true,
-    }
-    
-},
-{
-  path: "/add-target-page",
-  name: "target pages",
-  component: () =>
-    import(/* webpackChunkName: "lists" */ "../views/admin/AddTargetPage.vue"),
-  meta: {
-    requiresAuth: true,
-  }
-  
-},
+    },
+  },
+  {
+    path: "/add-target-page",
+    name: "target pages",
+    component: () =>
+      import(
+        /* webpackChunkName: "lists" */ "../views/admin/AddTargetPage.vue"
+      ),
+    meta: {
+      requiresAuth: true,
+    },
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
+
 
 // navigation guard to check for logged in users
 router.beforeEach((to, from, next) => {
