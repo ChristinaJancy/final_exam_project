@@ -32,7 +32,7 @@
                       <v-img v-bind:src="item.image"></v-img>
                     </td>
                     <td>
-                      <router-link
+                      <router-link class="primary--text"
                         :to="{
                           name: 'link opportunity',
                           params: {
@@ -43,14 +43,14 @@
                           },
                         }"
                       >
-                        <span id="td_pageLink"><b>{{ item.pageLink }}</b></span>
+                        <span id="td_pageLink">{{ item.pageLink }}</span>
                       </router-link>
                     </td>
                     <td>
                       <span id="page_urlTopic">{{ item.urlTopic }}</span>
                     </td>
                     <td>
-                      <router-link
+                      <router-link class="primary--text"
                         :to="{
                           name: 'link opportunity',
                           params: {
