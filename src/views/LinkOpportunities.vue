@@ -113,6 +113,7 @@ tr th {
   max-width: 50px;
   max-height: auto;
   padding: 5px;
+  
 }
 .col h1 {
   text-align: right;

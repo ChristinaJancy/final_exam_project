@@ -12,8 +12,8 @@ const vuetify = new Vuetify({
         backgroundNav: "#f8f9fe",
         primary: "#23272A",
         secondary: "#fff",
-        anchor: "#8c9eff",
-        warning: "#fe3652",
+        lightBlue: "#8c9eff",
+        warning: "#FE3652",
         dark: "#2C2F33",
         light: "#dee4e7",
         white: "#fff",
@@ -24,14 +24,15 @@ const vuetify = new Vuetify({
         TabPurple: "#782D76",
         gradient1: "#112243",
         gradient2: "#782D76",
-        gradient3: "#FE3652"
+        gradient3: "#FE3652",
+        TabBlueToLightBlue:"#112243"
       },
       dark: {
         background: "#0d1117",
         backgroundNav: "#161b22",
         primary: "#fff",
         secondary: "#2C2F33",
-        anchor: "#8c9eff",
+        lightBlue: "#8c9eff",
         warning: "#FE3652",
         dark: "#2C2F33",
         light: "#dee4e7",
@@ -43,7 +44,8 @@ const vuetify = new Vuetify({
         TabPurple: "#782D76",
         gradient1: "#23272a",
         gradient2: "#0d1117",
-        gradient3: "#161b22"
+        gradient3: "#161b22",
+        TabBlueToLightBlue:"#8c9eff"
       },
     },
   },
