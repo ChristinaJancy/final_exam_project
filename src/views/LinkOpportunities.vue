@@ -1,5 +1,5 @@
 <template>
-  <section class="linkOpportunities">
+  <v-container class="linkOpportunities">
     <v-img
       :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
       cover
@@ -72,7 +72,7 @@
         </v-row>
       </v-container>
     </v-img>
-  </section>
+  </v-container>
 </template>
 
 <script scoped>

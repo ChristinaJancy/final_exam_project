@@ -1,5 +1,6 @@
 <template>
-  <section id="billing">
+  <v-container id="billing">
+    <section>
     <v-row>
       <v-col cols="12" lg="6" xs="12" class="mx-auto">
         <v-card
@@ -203,7 +204,8 @@
         </v-card>
       </v-col>
     </v-row>
-  </section>
+    </section>
+  </v-container>
 </template>
 
 <script>

@@ -5,7 +5,7 @@
     src="https://firebasestorage.googleapis.com/v0/b/tabtimize.appspot.com/o/assets%2Fbg-why.svg?alt=media&token=72a53484-69b1-4873-a7ec-db5c005d8373"
     cover
   >
-    <section class="addNewItems" style="padding-top:150px;">
+    <v-container class="addNewItems" style="padding-top:150px;">
       <div :class="{ settings: !showAllPages }" class="col1">
         <v-snackbar top v-model="snackbar" :multi-line="multiLine">
           {{ itemAdded }}
@@ -258,7 +258,7 @@
           </v-col>
         </div>
       </div>
-    </section>
+    </v-container>
   </v-img>
 </template>
 

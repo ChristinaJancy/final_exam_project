@@ -1,5 +1,5 @@
 <template>
-  <div id="login">
+  <v-container id="login">
     <PasswordReset
       v-if="showPasswordReset"
       @close="togglePasswordReset()"
@@ -103,7 +103,7 @@
         </form>
       </div>
     </section>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -214,6 +214,7 @@ label {
   .col2 {
     h1 {
       margin-bottom: 2rem;
+      font-weight: bold;
     }
 
     form {

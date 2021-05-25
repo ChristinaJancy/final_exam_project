@@ -1,5 +1,5 @@
 <template>
-  <section id="account">
+  <v-container id="account">
     <div :class="{ settings: !showProfile }" class="col1">
       <transition name="fade">
         <p v-if="showSuccess" class="success">profile updated</p>
@@ -134,7 +134,7 @@
         </form>
       </div>
     </div>
-  </section>
+  </v-container>
 </template>
 
 <script>

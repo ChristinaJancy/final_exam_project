@@ -1,11 +1,11 @@
 <template>
-  <section id="dashboard">
+  <v-container id="dashboard">
     <div class="profile ml-4">
       <small>Welcome back</small>
       <h2>{{ userProfile.name }}</h2>
       <p>{{ userProfile.company }}</p>
     </div>
-  </section>
+  </v-container>
 </template>
 
 <script>
