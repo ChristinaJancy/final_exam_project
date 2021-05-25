@@ -1,209 +1,216 @@
 <template>
   <v-container id="billing">
     <section>
-    <v-row>
-      <v-col cols="12" lg="6" xs="12" class="mx-auto">
-        <v-card
-          class="mx-auto text-center billing-top-cards"
-          id="analysis-balance"
-        >
-          <v-card-title class="justify-center">Analysis balance</v-card-title>
-          <v-card-text class="text--primary">
-            <div class="text-h5">
-              19 <span class="text-subtitle-2">/ 156 used</span>
-            </div>
-          </v-card-text>
-
-          <v-card-actions>
-            <v-btn color="red" small text :right="true" :absolute="true">
-              get more
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-      <v-col cols="12" lg="6" xs="12" class="mx-auto">
-        <v-card class="mx-auto text-center billing-top-cards">
-          <v-card-title class="justify-center">registered pages</v-card-title>
-
-          <v-card-text class="text--primary">
-            <div class="text-h5">
-              4
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-col>
-
-      <!--End of top row -->
-      <p>&nbsp;</p>
-
-      <!-- row start for subscription plan, billing info and payment method -->
-
-      <!------------------Subscription plan------------------->
-      <v-col cols="12" lg="4" md="6">
-        <v-card class="billing-card mx-4 px-2">
-          <v-card-title class="card-title justify-center"
-            >Subscription plan</v-card-title
+      <v-row>
+        <v-col cols="12" lg="6" xs="12" class="mx-auto">
+          <v-card
+            class="mx-auto text-center billing-top-cards"
+            id="analysis-balance"
           >
-          <div class="text-center">
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>Current plan</v-list-item-title>
-                <v-list-item-subtitle>Free user</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>Monthly analysis</v-list-item-title>
-                <v-list-item-subtitle>10</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>Monthly price</v-list-item-title>
-                <v-list-item-subtitle>USD 0.00</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>Next billing</v-list-item-title>
-                <v-list-item-subtitle>May. 27th 2021</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </div>
-          <v-card-actions>
-            <v-btn
-              color="red"
-              small
-              text
-              :right="true"
-              :bottom="true"
-              :absolute="true"
-            >
-              get more
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-      <!-- subscription plan end -->
-
-      <!------------------Billing info------------------->
-      <v-col cols="12" lg="4" md="6">
-        <v-card class="billing-card mx-4 px-2">
-          <v-card-title class="card-title justify-center">
-            Billing Information</v-card-title
-          >
-          <div class="text-center">
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>billing email</v-list-item-title>
-                <v-list-item-subtitle>
-                  {{ currentUser.email }}
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>Company</v-list-item-title>
-                <v-list-item-subtitle>{{
-                  userProfile.company
-                }}</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>Address</v-list-item-title>
-                <v-list-item-subtitle
-                  >Somewhere street 2, <br />6700 Esbjerg, Denmark.
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </div>
-
-          <v-card-actions>
-            <v-btn
-              color="red"
-              small
-              text
-              :right="true"
-              :bottom="true"
-              :absolute="true"
-            >
-              get more
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-
-      <!------------------payment method------------------->
-      <v-col cols="12" lg="4" md="12">
-        <v-card class="billing-card mx-4 px-4">
-          <v-card-title class="card-title justify-center">
-            Payment method</v-card-title
-          >
-          <v-card class="mx-auto py-4 border-bottom-green backgroundNav" max-width="344">
-            <v-list-item three-line>
-              <v-list-item-content id="payment-card-info">
-                <v-list-item-title class="mt-5">card number</v-list-item-title>
-                <v-list-item-subtitle>visa - 5442</v-list-item-subtitle>
-                <v-list-item-title class="pt-3">expiration date</v-list-item-title>
-                <v-list-item-subtitle>02/02-2023</v-list-item-subtitle>
-              </v-list-item-content>
-              <v-list-item-avatar size="50" class="mt-2">
-                <v-img 
-                contain
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
-                  alt="Visa logo"
-                />
-              </v-list-item-avatar>
-            </v-list-item>
+            <v-card-title class="justify-center">Analysis balance</v-card-title>
+            <v-card-text class="text--primary">
+              <div class="text-h5">
+                19 <span class="text-subtitle-2">/ 156 used</span>
+              </div>
+            </v-card-text>
 
             <v-card-actions>
+              <v-btn color="red" small text :right="true" :absolute="true">
+                get more
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+        <v-col cols="12" lg="6" xs="12" class="mx-auto">
+          <v-card class="mx-auto text-center billing-top-cards">
+            <v-card-title class="justify-center">registered pages</v-card-title>
+
+            <v-card-text class="text--primary">
+              <div class="text-h5">
+                4
+              </div>
+            </v-card-text>
+          </v-card>
+        </v-col>
+
+        <!--End of top row -->
+        <p>&nbsp;</p>
+
+        <!-- row start for subscription plan, billing info and payment method -->
+
+        <!------------------Subscription plan------------------->
+        <v-col cols="12" lg="4" md="6">
+          <v-card class="billing-card mx-4 px-2">
+            <v-card-title class="card-title justify-center"
+              >Subscription plan</v-card-title
+            >
+            <div class="text-center">
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Current plan</v-list-item-title>
+                  <v-list-item-subtitle>Free user</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Monthly analysis</v-list-item-title>
+                  <v-list-item-subtitle>10</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Monthly price</v-list-item-title>
+                  <v-list-item-subtitle>USD 0.00</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Next billing</v-list-item-title>
+                  <v-list-item-subtitle>May. 27th 2021</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </div>
+            <v-card-actions>
               <v-btn
-                color="green"
+                color="red"
                 small
                 text
                 :right="true"
                 :bottom="true"
                 :absolute="true"
               >
-                <b>active</b>
+                get more
               </v-btn>
             </v-card-actions>
           </v-card>
+        </v-col>
+        <!-- subscription plan end -->
 
-          <v-card-actions>
-            <v-btn
-              color="red"
-              small
-              text
-              :right="true"
-              :bottom="true"
-              :absolute="true"
+        <!------------------Billing info------------------->
+        <v-col cols="12" lg="4" md="6">
+          <v-card class="billing-card mx-4 px-2">
+            <v-card-title class="card-title justify-center">
+              Billing Information</v-card-title
             >
-              get more
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
+            <div class="text-center">
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>billing email</v-list-item-title>
+                  <v-list-item-subtitle>
+                    {{ currentUser.email }}
+                  </v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Company</v-list-item-title>
+                  <v-list-item-subtitle>{{
+                    userProfile.company
+                  }}</v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-list-item-title>Address</v-list-item-title>
+                  <v-list-item-subtitle
+                    >Somewhere street 2, <br />6700 Esbjerg, Denmark.
+                  </v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </div>
 
-      <!------------------Invoices------------------->
+            <v-card-actions>
+              <v-btn
+                color="red"
+                small
+                text
+                :right="true"
+                :bottom="true"
+                :absolute="true"
+              >
+                get more
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
 
-      <v-col cols="12" xl="12">
-        <v-card class="mx-4 px-4 secondary">
-          <h3 class="mb-0">
-            Invoices
-          </h3>
-          <template>
-            <v-data-table
-              :headers="headers"
-              :items="desserts"
-              :items-per-page="5"
-              class="elevation-1 secondary"
-            ></v-data-table>
-          </template>
-        </v-card>
-      </v-col>
-    </v-row>
+        <!------------------payment method------------------->
+        <v-col cols="12" lg="4" md="12">
+          <v-card class="billing-card mx-4 px-4">
+            <v-card-title class="card-title justify-center">
+              Payment method</v-card-title
+            >
+            <v-card
+              class="mx-auto py-4 border-bottom-green backgroundNav"
+              max-width="344"
+            >
+              <v-list-item three-line>
+                <v-list-item-content id="payment-card-info">
+                  <v-list-item-title class="mt-5"
+                    >card number</v-list-item-title
+                  >
+                  <v-list-item-subtitle>visa - 5442</v-list-item-subtitle>
+                  <v-list-item-title class="pt-3"
+                    >expiration date</v-list-item-title
+                  >
+                  <v-list-item-subtitle>02/02-2023</v-list-item-subtitle>
+                </v-list-item-content>
+                <v-list-item-avatar size="50" class="mt-2">
+                  <v-img
+                    contain
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
+                    alt="Visa logo"
+                  />
+                </v-list-item-avatar>
+              </v-list-item>
+
+              <v-card-actions>
+                <v-btn
+                  color="green"
+                  small
+                  text
+                  :right="true"
+                  :bottom="true"
+                  :absolute="true"
+                >
+                  <b>active</b>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+
+            <v-card-actions>
+              <v-btn
+                color="red"
+                small
+                text
+                :right="true"
+                :bottom="true"
+                :absolute="true"
+              >
+                get more
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+
+        <!------------------Invoices------------------->
+
+        <v-col cols="12" xl="12">
+          <v-card class="mx-4 px-4 secondary">
+            <h3 class="mb-0">
+              Invoices
+            </h3>
+            <template>
+              <v-data-table
+                :headers="headers"
+                :items="desserts"
+                :items-per-page="5"
+                class="elevation-1 secondary"
+              ></v-data-table>
+            </template>
+          </v-card>
+        </v-col>
+      </v-row>
     </section>
   </v-container>
 </template>
@@ -343,7 +350,7 @@ export default {
 .billing-top-cards {
   height: 130px;
   max-width: 300px;
-    background-color: var(--v-secondary-base) !important;
+  background-color: var(--v-secondary-base) !important;
   .v-card__title {
     text-transform: uppercase;
     font-weight: bold;

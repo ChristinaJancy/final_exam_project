@@ -136,12 +136,12 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title>account</v-list-item-title>
+              <v-list-item-title>Account</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
 
-        <router-link to="Billing">
+        <router-link to="billing">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-credit-card-outline</v-icon>
@@ -153,7 +153,7 @@
           </v-list-item>
         </router-link>
 
-        <router-link to="Lists">
+        <router-link to="lists">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-format-list-bulleted</v-icon>

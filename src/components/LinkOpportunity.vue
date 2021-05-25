@@ -1,5 +1,5 @@
 <template>
-  <section id="linkOpportunity">
+  <v-container id="linkOpportunity">
     <v-row>
       <v-col cols="12" align="center">
         Showing <b>{{ staticLinks.length }}</b> link opportunities for:
@@ -255,7 +255,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </section>
+  </v-container>
 </template>
 
 <script>

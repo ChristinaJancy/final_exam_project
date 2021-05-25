@@ -1,7 +1,6 @@
 <template>
-  <v-footer id="footer" color="transparent" app inset>
-    <v-container>
-      <v-row align="center">
+    <v-footer id="footer" color="transparent" app inset >
+      <v-row no-gutters align="center">
         <v-col
           v-for="(link, i) in links"
           :key="i"
@@ -11,7 +10,7 @@
         >
           <a
             :href="link.href"
-            class="text-decoration-none text-uppercase text-caption font-weight-regular"
+            class="text-decoration-none text-uppercase text-caption font-weight-regular pl-3"
             rel="noopener"
             target="_blank"
             v-text="link.text"
@@ -20,7 +19,7 @@
 
         <v-spacer class="hidden-sm-and-down" />
 
-        <v-col cols="12" md="auto">
+        <v-col cols="12" md="auto" >
           <div class="text-body-2 font-weight-light pt-6 pt-md-0 text-center">
             &copy; {{ new Date().getFullYear() }} -
             <!-- <v-icon>mdi-vuetify</v-icon> -->
@@ -32,8 +31,7 @@
           </div>
         </v-col>
       </v-row>
-    </v-container>
-  </v-footer>
+    </v-footer>
 </template>
 
 <script>

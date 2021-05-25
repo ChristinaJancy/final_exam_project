@@ -25,7 +25,9 @@ const vuetify = new Vuetify({
         gradient1: "#112243",
         gradient2: "#782D76",
         gradient3: "#FE3652",
-        TabBlueToLightBlue:"#112243"
+        pink:"#EC407A",
+        deepPurple: "#7F20DE",
+        lightGreen: "#1565C0"
       },
       dark: {
         background: "#0d1117",
@@ -45,7 +47,9 @@ const vuetify = new Vuetify({
         gradient1: "#23272a",
         gradient2: "#0d1117",
         gradient3: "#161b22",
-        TabBlueToLightBlue:"#8c9eff"
+        pink:"#EC407A",
+        deepPurple: "#7F20DE",
+        lightGreen: "#1565C0"
       },
     },
   },
