@@ -108,6 +108,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#dashboard{
+  padding-bottom:4rem;
+}
 .v-sheet--offset {
   top: -24px;
   position: relative;
