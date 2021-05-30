@@ -1,5 +1,5 @@
 <template>
-  <v-container id="login">
+ <div id="login">
     <PasswordReset
       v-if="showPasswordReset"
       @close="togglePasswordReset()"
@@ -9,8 +9,8 @@
         <h1>Tabtimize</h1>
         <p>
           Welcome to
-          <a href="https://tabtimize.com/" target="_blank">Tabtimize.</a>Powered
-          by Vue.js, vuex and Firebase.
+          <a href="https://tabtimize.com/" target="_blank">Tabtimize. </a>Powered
+          by Vuejs, vuex and Firebase.
         </p>
       </div>
       <div :class="{ 'signup-form': !showLoginForm }" class="col2">
@@ -103,7 +103,7 @@
         </form>
       </div>
     </section>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -178,7 +178,8 @@ label {
 
   .col1,
   .col2 {
-    height: 100vh;
+    min-height: 100vh;
+    height:100%;
     padding-top: 30vh;
     @media screen and (max-width: 742px) {
       height: auto;
