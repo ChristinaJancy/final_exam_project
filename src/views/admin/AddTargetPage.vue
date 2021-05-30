@@ -145,7 +145,7 @@
                 dark
                 class="button-red"
               >
-                Add new Target Page
+                Add Target Page
               </v-btn>
             </v-col>
           </v-row>
@@ -394,7 +394,7 @@ tr th {
 h1 {
   @include infobox_mixin(
     5px,
-    var(--v-gradient1-base),
+    var(--v-secondary-base),
     10px,
     5px,
     var(--v-primary-base)
