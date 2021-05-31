@@ -154,17 +154,46 @@
 <script scoped>
 /*eslint-disable*/
 // import { dbMenuAdd } from '../../firebase.js'
-import { pages } from "../firebase.js";
+import { dbPageAdd, fb } from "../firebase";
 export default {
   data() {
     return {
       dialog: false,
+      pageName: "",
+      urlTopic: "",
+      pageLink: "",
+      item: [],
+      image: null, //var to store image url in
+      btnDisable: true, //disable btn before image is uploaded
     };
   },
   beforeCreate() {
     this.$store.dispatch("setPages");
   },
   methods: {
+    uploadImage(e) {
+      //e is event
+      let file = e; //store file in variable
+      console.log(e); //check console.log
+      var storageRef = fb.storage().ref("pages/" + file.name);
+      let uploadTask = storageRef.put(file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => {
+          //handle unsuccesful uploads
+        },
+        () => {
+          //Handle succesful uploads on complete
+          //For instance, get the download URL: https://firebasestorage.googleapis.com
+          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+            this.image = downloadURL;
+            this.btnDisable = false;
+            console.log("File available", downloadURL);
+          });
+        }
+      );
+    },
     addNewPage() {
       //debugger;
       this.snackbar = true;

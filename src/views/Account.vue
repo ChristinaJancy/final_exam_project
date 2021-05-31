@@ -63,7 +63,7 @@
         </form>
       </div>
 
-      <div v-else class="background">
+      <div v-else class="background ">
         <v-file-input
           label="Update Profile Picture"
           prepend-icon="mdi-camera"
@@ -78,6 +78,7 @@
             type="text"
             :placeholder="userProfile.name"
             id="name"
+            class="primary--text"
           />
 
           <label for="nameLast">Last Name</label>
@@ -86,6 +87,7 @@
             type="text"
             :placeholder="userProfile.nameLast"
             id="nameLast"
+            class="primary--text"
           />
 
           <label for="company">Company</label>
@@ -94,6 +96,7 @@
             type="text"
             :placeholder="userProfile.company"
             id="company"
+            class="primary--text"
           />
 
           <label for="companyType">Company Type</label>
@@ -102,6 +105,7 @@
             type="text"
             :placeholder="userProfile.companyType"
             id="companyType"
+            class="primary--text"
           />
 
           <v-row>
@@ -124,8 +128,9 @@
                 v-on:click="addProfilePicture()"
                 rounded
                 color="TabRed"
-                dark
-                class="button-red"
+                class="white--text"
+                depressed
+                
               >
                 Update Profile
               </v-btn>
