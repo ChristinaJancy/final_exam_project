@@ -1,8 +1,8 @@
 <template>
   <div id="gradient-banner">
     <div class="shape"></div>
-    <h2 v-if="$route.fullPath === '/'" class="white--text"></h2>
-    <h2 v-else class="white--text">{{ $route.name }}</h2>
+    <h3 v-if="$route.fullPath === '/' || $route.name == 'link opportunity'" class="white--text"></h3>
+    <h3 v-else class="white--text">{{ $route.name }}</h3>
   </div>
 </template>
 
@@ -65,12 +65,12 @@ svg {
 }
 #gradient-banner {
   z-index: 5;
-  h2 {
+  h3 {
     position: absolute;
     top: 0;
     z-index: 10;
     margin-top: -80px;
-    padding-left: 20px;
+    padding-left: 50px;
     text-transform: capitalize;
   }
 }

@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path: "/billing",
-    name: "billing",
+    name: "billing and usage",
     component: () =>
       import(/* webpackChunkName: "billing" */ "../views/Billing.vue"),
     meta: {
