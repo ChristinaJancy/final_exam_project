@@ -121,7 +121,7 @@
             </v-item-group>
 
             <v-col>
-              <v-window v-model="window" vertical >
+              <v-window v-model="window" vertical>
                 <v-window-item class="window-item">
                   <v-card flat>
                     <v-card-text>
@@ -176,33 +176,6 @@
             </v-col>
           </v-row>
 
-          <!--  -->
-
-          <!-- 
-                <v-list class="mb-7">
-              <v-list-item class="link-list-item">
-              <v-list-item-content>
-                <v-list-item-subtitle>URL topic</v-list-item-subtitle>
-                <v-list-item-title>{{ staticLink.urlTopic }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item class="link-list-item">
-              <v-list-item-content>
-                <v-list-item-subtitle>Domain Topic</v-list-item-subtitle>
-                <v-list-item-title>{{
-                  staticLink.domainTopic
-                }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item class="link-list-item">
-              <v-list-item-content>
-                <v-list-item-subtitle>Content Topic</v-list-item-subtitle>
-                <v-list-item-title>{{
-                  staticLink.contentTopic
-                }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item> 
-          </v-list>-->
 
           <v-card-actions>
             <v-btn
@@ -299,6 +272,182 @@ export default {
               "Instantly create competitor analysis, white-label reports and analyze your SEO issues.",
             anchor3:
               "Improve and monitor your website's search engine rankings with our supercharged SEO tools.",
+          },
+        },
+        {
+          company: "Instagram",
+          image:
+            "https://helloseo.dk/wp-content/uploads/2015/02/instagram-Logo-PNG-Transparent-Background-download.png",
+          pageName: "blog | SoMe",
+          pageLink:
+            "https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse",
+          description:
+            "We put people first, and value craft and simplicity in our work. Our teams inspire creativity around the world, helping over 1 billion people create and share.",
+          words: "15450",
+          lrs: "63",
+          seoScore: "88.9",
+          keywords: {
+            keyword1: "SEO",
+            keyword2: "right data",
+            keyword3: "digital marketing",
+          },
+          urlTopic: "Web Services",
+          domainTopic: "Business Services",
+          contentTopic: "Search engine optimization",
+          anchorSuggestions: {
+            anchor1:
+              "sfddse SEO Score Online Improve your SEO rating with the best website checker On Page SEO Checker Get free on page SEO audit report.",
+            anchor2:
+              "sfds competitor analysis, white-label reports and analyze your SEO issues.",
+            anchor3:
+              "sfdsfsearch engine rankings with our supercharged SEO tools.",
+          },
+        },
+        {
+          company: "Instagram",
+          image:
+            "https://helloseo.dk/wp-content/uploads/2015/02/instagram-Logo-PNG-Transparent-Background-download.png",
+          pageName: "blog | SoMe",
+          pageLink:
+            "https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse",
+          description:
+            "We put people first, and value craft and simplicity in our work. Our teams inspire creativity around the world, helping over 1 billion people create and share.",
+          words: "15450",
+          lrs: "63",
+          seoScore: "88.9",
+          keywords: {
+            keyword1: "SEO",
+            keyword2: "right data",
+            keyword3: "digital marketing",
+          },
+          urlTopic: "Web Services",
+          domainTopic: "Business Services",
+          contentTopic: "Search engine optimization",
+          anchorSuggestions: {
+            anchor1:
+              "sfddse SEO Score Online Improve your SEO rating with the best website checker On Page SEO Checker Get free on page SEO audit report.",
+            anchor2:
+              "sfds competitor analysis, white-label reports and analyze your SEO issues.",
+            anchor3:
+              "sfdsfsearch engine rankings with our supercharged SEO tools.",
+          },
+        },
+        {
+          company: "Instagram",
+          image:
+            "https://helloseo.dk/wp-content/uploads/2015/02/instagram-Logo-PNG-Transparent-Background-download.png",
+          pageName: "blog | SoMe",
+          pageLink:
+            "https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse",
+          description:
+            "We put people first, and value craft and simplicity in our work. Our teams inspire creativity around the world, helping over 1 billion people create and share.",
+          words: "15450",
+          lrs: "63",
+          seoScore: "88.9",
+          keywords: {
+            keyword1: "SEO",
+            keyword2: "right data",
+            keyword3: "digital marketing",
+          },
+          urlTopic: "Web Services",
+          domainTopic: "Business Services",
+          contentTopic: "Search engine optimization",
+          anchorSuggestions: {
+            anchor1:
+              "sfddse SEO Score Online Improve your SEO rating with the best website checker On Page SEO Checker Get free on page SEO audit report.",
+            anchor2:
+              "sfds competitor analysis, white-label reports and analyze your SEO issues.",
+            anchor3:
+              "sfdsfsearch engine rankings with our supercharged SEO tools.",
+          },
+        },
+
+        {
+          company: "Instagram",
+          image:
+            "https://helloseo.dk/wp-content/uploads/2015/02/instagram-Logo-PNG-Transparent-Background-download.png",
+          pageName: "blog | SoMe",
+          pageLink:
+            "https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse",
+          description:
+            "We put people first, and value craft and simplicity in our work. Our teams inspire creativity around the world, helping over 1 billion people create and share.",
+          words: "15450",
+          lrs: "63",
+          seoScore: "88.9",
+          keywords: {
+            keyword1: "SEO",
+            keyword2: "right data",
+            keyword3: "digital marketing",
+          },
+          urlTopic: "Web Services",
+          domainTopic: "Business Services",
+          contentTopic: "Search engine optimization",
+          anchorSuggestions: {
+            anchor1:
+              "sfddse SEO Score Online Improve your SEO rating with the best website checker On Page SEO Checker Get free on page SEO audit report.",
+            anchor2:
+              "sfds competitor analysis, white-label reports and analyze your SEO issues.",
+            anchor3:
+              "sfdsfsearch engine rankings with our supercharged SEO tools.",
+          },
+        },
+        {
+          company: "Instagram",
+          image:
+            "https://helloseo.dk/wp-content/uploads/2015/02/instagram-Logo-PNG-Transparent-Background-download.png",
+          pageName: "blog | SoMe",
+          pageLink:
+            "https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse",
+          description:
+            "We put people first, and value craft and simplicity in our work. Our teams inspire creativity around the world, helping over 1 billion people create and share.",
+          words: "15450",
+          lrs: "63",
+          seoScore: "88.9",
+          keywords: {
+            keyword1: "SEO",
+            keyword2: "right data",
+            keyword3: "digital marketing",
+          },
+          urlTopic: "Web Services",
+          domainTopic: "Business Services",
+          contentTopic: "Search engine optimization",
+          anchorSuggestions: {
+            anchor1:
+              "sfddse SEO Score Online Improve your SEO rating with the best website checker On Page SEO Checker Get free on page SEO audit report.",
+            anchor2:
+              "sfds competitor analysis, white-label reports and analyze your SEO issues.",
+            anchor3:
+              "sfdsfsearch engine rankings with our supercharged SEO tools.",
+          },
+        },
+
+        {
+          company: "Instagram",
+          image:
+            "https://helloseo.dk/wp-content/uploads/2015/02/instagram-Logo-PNG-Transparent-Background-download.png",
+          pageName: "blog | SoMe",
+          pageLink:
+            "https://about.instagram.com/blog/announcements/introducing-new-tools-to-protect-our-community-from-abuse",
+          description:
+            "We put people first, and value craft and simplicity in our work. Our teams inspire creativity around the world, helping over 1 billion people create and share.",
+          words: "15450",
+          lrs: "63",
+          seoScore: "88.9",
+          keywords: {
+            keyword1: "SEO",
+            keyword2: "right data",
+            keyword3: "digital marketing",
+          },
+          urlTopic: "Web Services",
+          domainTopic: "Business Services",
+          contentTopic: "Search engine optimization",
+          anchorSuggestions: {
+            anchor1:
+              "sfddse SEO Score Online Improve your SEO rating with the best website checker On Page SEO Checker Get free on page SEO audit report.",
+            anchor2:
+              "sfds competitor analysis, white-label reports and analyze your SEO issues.",
+            anchor3:
+              "sfdsfsearch engine rankings with our supercharged SEO tools.",
           },
         },
         {
